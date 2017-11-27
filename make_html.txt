@@ -35,9 +35,4 @@ Things to do in order to create an HTML version of the ontology
 				<dd><a href="http://promsns.org/def/dmn.ttl">Ontology source</a></dd>
 			</dl>
 
-* add ontology image
-	* after ToC, add
-	<div id="img">
-		<img src="agrif.png" alt="Image of all AGRIF classes">
-		<p><em>All of the AGRIF classes and their relationships</em></p>
-	</div>
+* replace all the hash links in the classes list with the class name

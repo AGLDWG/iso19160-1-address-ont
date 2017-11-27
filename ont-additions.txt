@@ -1,7 +1,6 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 
 owl:versionIRI <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/1.0> ;
-dc:contributor "Australian Government Linked Data Working Group" ;
 dct:created "2017-11-27"^^xsd:date ;
 dc:publisher "Australian Government Linked Data Working Group" ;
 dc:creator "ISO TC211, Group for Ontology Management" ;
