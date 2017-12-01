@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>ISO19160-1:2015 Address Codelist</title>
+        <link href="http://pid.data.gov.au/websrv/static/LODE/owl.css" rel="stylesheet" type="text/css" />
+        <link href="http://pid.data.gov.au/websrv/static/LODE/Primer.css" rel="stylesheet" type="text/css" />
+        <link href="http://pid.data.gov.au/websrv/static/LODE/rec.css" rel="stylesheet" type="text/css" />
+        <link href="http://pid.data.gov.au/websrv/static/LODE/extra.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="http://pid.data.gov.au/websrv/static/LODE/favicon.ico" />
+        <script src="http://pid.data.gov.au/websrv/static/LODE/jquery.js"></script>
+        <script src="http://pid.data.gov.au/websrv/static/LODE/jquery.scrollTo.js"></script>
+        <script src="http://pid.data.gov.au/websrv/static/LODE/marked.min.js"></script>
+        <script>
+            $(document).ready(
+                function () {
+                	jQuery(".markdown").each(function(el){
+            jQuery(this).after(marked(jQuery(this).text())).remove()});
+                    var list = $('a[name="http://www.essepuntato.it/tmp/1512130422-ontology"]');
+                    if (list.size() != 0) {
+                    	var element = list.first();
+                    	$.scrollTo(element);
+                    }
+                });
+        </script>
+    </head>
+    <body>
+        <div class="head">
+            <h1>ISO19160-1 Address Codelist</h1>
+            <dl>
+                <dt>IRI:</dt>
+                <dd>http://www.semanticweb.org/owl/owlapi/turtle#AddressCodelist</dd>
+            </dl>
+            <dl>
+                <dt>Current version:</dt>
+                <dd>v1.1</dd>
+            </dl>
+            <dl>
+                <dt>Authors:</dt>
+                <dd>ISO TC211, Group for Ontology Management</dd>
+                <dt>Contributors:</dt>
+                <dd>Australian Government Linked Data Working Group</dd>
+                <dd>Nicholas Car</dd>
+            </dl>
+            <dl>
+                <dt>Publisher:</dt>
+                <dd><a href="http://linked.data.gov.au">http://linked.data.gov.au</a></dd>
+            </dl>
+            <dl>
+                <dt>Other visualisation:</dt>
+                <dd><a href="http://eelst.cs.unibo.it/apps/LODE/source?url=http://www.essepuntato.it/tmp/1512130422-ontology">Ontology source</a></dd>
+            </dl>
+        </div>
+        <hr />
+        <h2>Abstract</h2>
+        <span class="markdown">A SKOS vocabulary version of the ISO19160-1:2015 standard's codelists. In addition to SKOS vocabulary formulation, each specialised ConceptSceme's members are typed according to an OWL class.</span>
+        <div id="toc">
+            <h2>Table of Content</h2>
+            <ol>
+                <li><a href="#namedindividuals">Named Individuals</a></li>
+                <li><a href="#annotationproperties">Annotation Properties</a></li>
+                <li><a href="#namespacedeclarations">Namespace Declarations</a></li>
+            </ol>
+        </div>
+        <div id="namedindividuals">
+            <h2>Named Individuals</h2>
+            <ul class="hlist">
+                <li><a href="#d4e805" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/abbreviatedAlternative"><span>abbreviated alternative</span></a></li>
+                <li><a href="#d4e236" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType"><span>address alias type</span></a></li>
+                <li><a href="#d4e244" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasTypeCollection"><span>address alias type collection</span></a></li>
+                <li><a href="#d4e265" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressClass"><span>address class</span></a></li>
+                <li><a href="#d4e277" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressClassCollection"><span>address class collection</span></a></li>
+                <li><a href="#d4e288" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType"><span>address component type</span></a></li>
+                <li><a href="#d4e295" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentTypeCollection"><span>address component type collection</span></a></li>
+                <li><a href="#d4e322" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType"><span>address component value type</span></a></li>
+                <li><a href="#d4e330" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueTypeCollection"><span>address component value type collection</span></a></li>
+                <li><a href="#d4e351" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage"><span>address lifecycle stage</span></a></li>
+                <li><a href="#d4e358" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStageCollection"><span>address lifecycle stage collection</span></a></li>
+                <li><a href="#d4e382" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressPositionType"><span>address position type</span></a></li>
+                <li><a href="#d4e394" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressPositionTypeCollection"><span>address position type collection</span></a></li>
+                <li><a href="#d4e404" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus"><span>address status</span></a></li>
+                <li><a href="#d4e412" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatusCollection"><span>address status collection</span></a></li>
+                <li><a href="#d4e428" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology"><span>address typology</span></a></li>
+                <li><a href="#d4e435" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypologyCollection"><span>address typology collection</span></a></li>
+                <li><a href="#d4e452" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage"><span>addressable object lifecycle stage</span></a></li>
+                <li><a href="#d4e459" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStageCollection"><span>addressable object lifecycle stage collection</span></a></li>
+                <li><a href="#d4e482" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectType"><span>addressable object type</span></a></li>
+                <li><a href="#d4e495" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectTypeCollection"><span>addressable object type collection</span></a></li>
+                <li><a href="#d4e634" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/addressedObjectIdentifier"><span>addressed object identifier</span></a></li>
+                <li><a href="#d4e656" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/administrativeAreaName"><span>administrative area name</span></a></li>
+                <li><a href="#d4e1168" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/approved"><span>approved</span></a></li>
+                <li><a href="#d4e1104" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/area"><span>area</span></a></li>
+                <li><a href="#d4e1189" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/ceasedToExist"><span>ceased to exist</span></a></li>
+                <li><a href="#d4e528" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/classAlias"><span>class alias</span></a></li>
+                <li><a href="#d4e549" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/colloquialAlias"><span>colloquial alias</span></a></li>
+                <li><a href="#d4e826" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/colloquialAlternative"><span>colloquial alternative</span></a></li>
+                <li><a href="#d4e677" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/countryCode"><span>country code</span></a></li>
+                <li><a href="#d4e698" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/countryName"><span>country name</span></a></li>
+                <li><a href="#d4e912" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/current"><span>current</span></a></li>
+                <li><a href="#d4e848" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/defaultValue"><span>default value</span></a></li>
+                <li><a href="#d4e1210" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/exists"><span>exists</span></a></li>
+                <li><a href="#d4e1296" title="http://www.semanticweb.org/owl/owlapi/turtle#AddressCodelist"><span>ISO19160-1 Address Codelist</span></a></li>
+                <li><a href="#d4e570" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/lifecycleAlias"><span>lifecycle alias</span></a></li>
+                <li><a href="#d4e869" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/lifecycleAlternative"><span>lifecycle alternative</span></a></li>
+                <li><a href="#d4e592" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/localeAlias"><span>locale alias</span></a></li>
+                <li><a href="#d4e890" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/localeAlternative"><span>locale alternative</span></a></li>
+                <li><a href="#d4e720" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/localityName"><span>locality name</span></a></li>
+                <li><a href="#d4e1040" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/official"><span>official</span></a></li>
+                <li><a href="#d4e741" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/postOfficeName"><span>post office name</span></a></li>
+                <li><a href="#d4e762" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/postcode"><span>postcode</span></a></li>
+                <li><a href="#d4e933" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/proposed"><span>proposed</span></a></li>
+                <li><a href="#d4e1232" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/proposed"><span>proposed</span></a></li>
+                <li><a href="#d4e505" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/ReferenceObjectType"><span>reference object type</span></a></li>
+                <li><a href="#d4e517" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/ReferenceObjectTypeCollection"><span>reference object type collection</span></a></li>
+                <li><a href="#d4e954" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/rejected"><span>rejected</span></a></li>
+                <li><a href="#d4e976" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/reserved"><span>reserved</span></a></li>
+                <li><a href="#d4e997" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/retired"><span>retired</span></a></li>
+                <li><a href="#d4e1125" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/service"><span>service</span></a></li>
+                <li><a href="#d4e1146" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/thoroughfare"><span>thoroughfare</span></a></li>
+                <li><a href="#d4e784" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/thoroughfareName"><span>thoroughfare name</span></a></li>
+                <li><a href="#d4e1253" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/underConstruction"><span>under construction</span></a></li>
+                <li><a href="#d4e1018" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/unknown"><span>unknown</span></a></li>
+                <li><a href="#d4e1061" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/unknown"><span>unknown</span></a></li>
+                <li><a href="#d4e1274" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/unknown"><span>unknown</span></a></li>
+                <li><a href="#d4e1082" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/unofficial"><span>unofficial</span></a></li>
+                <li><a href="#d4e613" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/unspecifiedAlias"><span>unspecified alias</span></a></li>
+            </ul>
+            <div id="d4e805" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/abbreviatedAlternative"></a>
+                <h3>abbreviated alternative<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/abbreviatedAlternative</p>
+                <div class="comment"><span class="markdown">The alternative component value is an abbreviation.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType">address component value type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e236" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType"></a>
+                <h3>address alias type<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">concept scheme</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e244" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasTypeCollection"></a>
+                <h3>address alias type collection<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasTypeCollection</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Collection">collection</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e265" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressClass"></a>
+                <h3>address class<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressClass</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">concept scheme</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e277" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressClassCollection"></a>
+                <h3>address class collection<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressClassCollection</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Collection">collection</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e288" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType"></a>
+                <h3>address component type<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">concept scheme</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e295" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentTypeCollection"></a>
+                <h3>address component type collection<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentTypeCollection</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Collection">collection</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e322" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType"></a>
+                <h3>address component value type<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">concept scheme</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e330" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueTypeCollection"></a>
+                <h3>address component value type collection<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueTypeCollection</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Collection">collection</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e351" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage"></a>
+                <h3>address lifecycle stage<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">concept scheme</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e358" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStageCollection"></a>
+                <h3>address lifecycle stage collection<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStageCollection</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Collection">collection</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e382" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressPositionType"></a>
+                <h3>address position type<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressPositionType</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">concept scheme</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e394" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressPositionTypeCollection"></a>
+                <h3>address position type collection<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressPositionTypeCollection</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Collection">collection</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e404" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus"></a>
+                <h3>address status<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">concept scheme</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e412" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatusCollection"></a>
+                <h3>address status collection<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatusCollection</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Collection">collection</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e428" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology"></a>
+                <h3>address typology<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">concept scheme</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e435" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypologyCollection"></a>
+                <h3>address typology collection<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypologyCollection</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Collection">collection</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e452" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage"></a>
+                <h3>addressable object lifecycle stage<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">concept scheme</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e459" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStageCollection"></a>
+                <h3>addressable object lifecycle stage collection<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStageCollection</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Collection">collection</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e482" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectType"></a>
+                <h3>addressable object type<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectType</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">concept scheme</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e495" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectTypeCollection"></a>
+                <h3>addressable object type collection<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectTypeCollection</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Collection">collection</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e634" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/addressedObjectIdentifier"></a>
+                <h3>addressed object identifier<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/addressedObjectIdentifier</p>
+                <div class="comment"><span class="markdown">Identifier of the addressed object, e.g. building name or address number.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType">address component type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e656" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/administrativeAreaName"></a>
+                <h3>administrative area name<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/administrativeAreaName</p>
+                <div class="comment"><span class="markdown">Name of an administrative area.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType">address component type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e1168" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/approved"></a>
+                <h3>approved<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/approved</p>
+                <div class="comment"><span class="markdown">The establishment or construction of the addressable object has been approved, i.e. the relevant authority has given approval for the establishment or construction of the addressable object.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage">addressable object lifecycle stage</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e1104" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/area"></a>
+                <h3>area<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/area</p>
+                <div class="comment"><span class="markdown">The address class is based on a division of land or water into demarcated areas, such as neighbourhoods or precincts or cadastral features.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology">address typology</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e1189" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/ceasedToExist"></a>
+                <h3>ceased to exist<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/ceasedToExist</p>
+                <div class="comment"><span class="markdown">The addressable object does not exist anymore (e.g. it has been demolished).</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage">addressable object lifecycle stage</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e528" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/classAlias"></a>
+                <h3>class alias<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/classAlias</p>
+                <div class="comment"><span class="markdown">The address alias is from a different address class.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType">address alias type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e549" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/colloquialAlias"></a>
+                <h3>colloquial alias<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/colloquialAlias</p>
+                <div class="comment"><span class="markdown">The address alias is a colloquial version of the address.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType">address alias type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e826" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/colloquialAlternative"></a>
+                <h3>colloquial alternative<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/colloquialAlternative</p>
+                <div class="comment"><span class="markdown">The alternative component value is a colloquial alternative for the component value.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType">address component value type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e677" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/countryCode"></a>
+                <h3>country code<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/countryCode</p>
+                <div class="comment"><span class="markdown">ISO 3166-1 code for the country, territory or area of geopolitical interest.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType">address component type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e698" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/countryName"></a>
+                <h3>country name<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/countryName</p>
+                <div class="comment"><span class="markdown">Name of a country.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType">address component type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e912" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/current"></a>
+                <h3>current<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/current</p>
+                <div class="comment"><span class="markdown">The address or address component is currently in use.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage">address lifecycle stage</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e848" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/defaultValue"></a>
+                <h3>default value<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/defaultValue</p>
+                <div class="comment"><span class="markdown">The default component value (i.e. the one that is not an alternative).</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType">address component value type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e1210" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/exists"></a>
+                <h3>exists<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/exists</p>
+                <div class="comment"><span class="markdown">The addressable object exists.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage">addressable object lifecycle stage</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e1296" class="entity">
+                <a name="http://www.semanticweb.org/owl/owlapi/turtle#AddressCodelist"></a>
+                <h3>ISO19160-1 Address Codelist<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://www.semanticweb.org/owl/owlapi/turtle#AddressCodelist</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">concept scheme</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e570" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/lifecycleAlias"></a>
+                <h3>lifecycle alias<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/lifecycleAlias</p>
+                <div class="comment"><span class="markdown">The address alias has a different lifecycle stage.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType">address alias type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e869" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/lifecycleAlternative"></a>
+                <h3>lifecycle alternative<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/lifecycleAlternative</p>
+                <div class="comment"><span class="markdown">The alternative component value was used in a different lifecycle stage.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType">address component value type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e592" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/localeAlias"></a>
+                <h3>locale alias<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/localeAlias</p>
+                <div class="comment"><span class="markdown">The address alias is in a different locale.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType">address alias type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e890" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/localeAlternative"></a>
+                <h3>locale alternative<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/localeAlternative</p>
+                <div class="comment"><span class="markdown">The alternative component value is in a different locale.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType">address component value type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e720" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/localityName"></a>
+                <h3>locality name<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/localityName</p>
+                <div class="comment"><span class="markdown">Name of a locality.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType">address component type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e1040" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/official"></a>
+                <h3>official<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/official</p>
+                <div class="comment"><span class="markdown">An official addressing authority assigned the address.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus">address status</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e741" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/postOfficeName"></a>
+                <h3>post office name<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/postOfficeName</p>
+                <div class="comment"><span class="markdown">Name of a post office.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType">address component type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e762" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/postcode"></a>
+                <h3>postcode<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/postcode</p>
+                <div class="comment"><span class="markdown">Code used for the sorting of mail [SOURCE: UPU S42:2006].</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType">address component type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e933" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/proposed"></a>
+                <h3>proposed<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/proposed</p>
+                <div class="comment"><span class="markdown">The address or address component has been proposed, i.e. the relevant authority has initiated approval procedures for the use of the address or address component.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage">address lifecycle stage</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e1232" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/proposed"></a>
+                <h3>proposed<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/proposed</p>
+                <div class="comment"><span class="markdown">The establishment or construction of the addressable object has been proposed, i.e. the relevant authority has initiated approval procedures.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage">addressable object lifecycle stage</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e505" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/ReferenceObjectType"></a>
+                <h3>reference object type<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/ReferenceObjectType</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#ConceptScheme">concept scheme</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e517" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/ReferenceObjectTypeCollection"></a>
+                <h3>reference object type collection<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/ReferenceObjectTypeCollection</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Collection">collection</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e954" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/rejected"></a>
+                <h3>rejected<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/rejected</p>
+                <div class="comment"><span class="markdown">The address or address component was proposed but rejected.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage">address lifecycle stage</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e976" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/reserved"></a>
+                <h3>reserved<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/reserved</p>
+                <div class="comment"><span class="markdown">The address or address component has been reserved for future use.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage">address lifecycle stage</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e997" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/retired"></a>
+                <h3>retired<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/retired</p>
+                <div class="comment"><span class="markdown">The address or address component was in use at some stage, but not anymore.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage">address lifecycle stage</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e1125" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/service"></a>
+                <h3>service<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/service</p>
+                <div class="comment"><span class="markdown">The address class is based on delivery or collection services, such as a group of post boxes at the same location or poste restante.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology">address typology</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e1146" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/thoroughfare"></a>
+                <h3>thoroughfare<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/thoroughfare</p>
+                <div class="comment"><span class="markdown">The address class is based on navigable access features, such as streets or canals.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology">address typology</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e784" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/thoroughfareName"></a>
+                <h3>thoroughfare name<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/thoroughfareName</p>
+                <div class="comment"><span class="markdown">Name of a thoroughfare.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType">address component type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e1253" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/underConstruction"></a>
+                <h3>under construction<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/underConstruction</p>
+                <div class="comment"><span class="markdown">The establishment or construction of the addressable object is in progress.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage">addressable object lifecycle stage</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e1018" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/unknown"></a>
+                <h3>unknown<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/unknown</p>
+                <div class="comment"><span class="markdown">The lifecycle stage of the address or address component is unknown.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage">address lifecycle stage</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e1061" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/unknown"></a>
+                <h3>unknown<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/unknown</p>
+                <div class="comment"><span class="markdown">The status of the address is unknown.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus">address status</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e1274" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/unknown"></a>
+                <h3>unknown<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/unknown</p>
+                <div class="comment"><span class="markdown">The lifecycle stage of the addressable object is unknown.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage">addressable object lifecycle stage</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e1082" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/unofficial"></a>
+                <h3>unofficial<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/unofficial</p>
+                <div class="comment"><span class="markdown">The address was not assigned by an official addressing authority.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus">address status</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e613" class="entity">
+                <a name="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/unspecifiedAlias"></a>
+                <h3>unspecified alias<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/unspecifiedAlias</p>
+                <div class="comment"><span class="markdown">The type of address alias is not specified.</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType">address alias type</span></dd>
+                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+        </div>
+        <div id="annotationproperties">
+            <h2>Annotation Properties</h2>
+            <ul class="hlist">
+                <li><a href="#d4e130" title="http://www.w3.org/2004/02/skos/core#definition"><span>definition</span></a></li>
+                <li><a href="#d4e134" title="http://www.w3.org/2004/02/skos/core#inScheme"><span>in scheme</span></a></li>
+                <li><a href="#d4e125" title="http://purl.org/dc/terms/isFormatOf"><span>is format of</span></a></li>
+                <li><a href="#d4e138" title="http://www.w3.org/2004/02/skos/core#member"><span>member</span></a></li>
+                <li><a href="#d4e143" title="http://www.w3.org/2004/02/skos/core#prefLabel"><span>pref label</span></a></li>
+            </ul>
+            <div id="d4e130" class="entity">
+                <a name="http://www.w3.org/2004/02/skos/core#definition"></a>
+                <h3>definition<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#definition</p>
+            </div>
+            <div id="d4e134" class="entity">
+                <a name="http://www.w3.org/2004/02/skos/core#inScheme"></a>
+                <h3>in scheme<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#inScheme</p>
+            </div>
+            <div id="d4e125" class="entity">
+                <a name="http://purl.org/dc/terms/isFormatOf"></a>
+                <h3>is format of<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/dc/terms/isFormatOf</p>
+            </div>
+            <div id="d4e138" class="entity">
+                <a name="http://www.w3.org/2004/02/skos/core#member"></a>
+                <h3>member<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#member</p>
+            </div>
+            <div id="d4e143" class="entity">
+                <a name="http://www.w3.org/2004/02/skos/core#prefLabel"></a>
+                <h3>pref label<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#prefLabel</p>
+            </div>
+        </div>
+        <div id="namespacedeclarations">
+            <h2>Namespace Declarations <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+            <dl>
+                <dt><em>default namespace</em></dt>
+                <dd>http://www.semanticweb.org/owl/owlapi/turtle#AddressCodelist#</dd>
+                <dt>addressableobjectlifecyclestage</dt>
+                <dd>http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/</dd>
+                <dt>addressaliastype</dt>
+                <dd>http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/</dd>
+                <dt>addresscomponenttype</dt>
+                <dd>http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/</dd>
+                <dt>addresscomponentvaluetype</dt>
+                <dd>http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/</dd>
+                <dt>addresslifecyclestage</dt>
+                <dd>http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/</dd>
+                <dt>addressstatus</dt>
+                <dd>http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/</dd>
+                <dt>addresstypology</dt>
+                <dd>http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/</dd>
+                <dt>code</dt>
+                <dd>http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/</dd>
+                <dt>dc</dt>
+                <dd>http://purl.org/dc/elements/1.1/</dd>
+                <dt>owl</dt>
+                <dd>http://www.w3.org/2002/07/owl#</dd>
+                <dt>rdf</dt>
+                <dd>http://www.w3.org/1999/02/22-rdf-syntax-ns#</dd>
+                <dt>rdfs</dt>
+                <dd>http://www.w3.org/2000/01/rdf-schema#</dd>
+                <dt>skos</dt>
+                <dd>http://www.w3.org/2004/02/skos/core#</dd>
+                <dt>terms</dt>
+                <dd>http://purl.org/dc/terms/</dd>
+                <dt>turtle</dt>
+                <dd>http://www.semanticweb.org/owl/owlapi/turtle#</dd>
+                <dt>xsd</dt>
+                <dd>http://www.w3.org/2001/XMLSchema#</dd>
+            </dl>
+        </div>
+        <p class="endnote">This HTML document was obtained by processing the OWL ontology source code through <a href="http://www.essepuntato.it/lode">LODE</a>, <em>Live OWL Documentation Environment</em>, developed by <a href="http://www.essepuntato.it">Silvio Peroni</a>.</p>
+    </body>
+</html>

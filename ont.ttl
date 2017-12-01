@@ -1,1363 +1,1393 @@
-@prefix : <http://reference.data.gov.au/def/ont/iso19160-1-address/Address#> .
+@prefix : <http://reference.data.gov.au/def/ont/iso19160-1-address#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix iso19150-2: <http://def.isotc211.org/iso19150/-2/2012/base#> .
 @prefix iso19103_300: <http://def.isotc211.org/iso19103/2015/AnyType#> .
 @prefix iso19107_401: <http://def.isotc211.org/iso19107/2003/GeometryRoot#> .
+@prefix iso19135_1055: <http://def.isotc211.org/iso19135/2005/ProceduresForItemRegistration#> .
+@prefix iso19152_1252: <http://def.isotc211.org/iso19152/2012/SpecialClasses#> .
 @prefix iso19115-1_1505: <http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#> .
 @prefix iso19115-1_1508: <http://def.isotc211.org/iso19115/-1/2014/LineageInformation#> .
 @prefix iso19135-1_1058: <http://def.isotc211.org/iso19135/-1/2015/ExtendedModel#> .
-@prefix iso19135_1055: <http://def.isotc211.org/iso19135/2005/ProceduresForItemRegistration#> .
-@prefix iso19150-2: <http://def.isotc211.org/iso19150/-2/2012/base#> .
-@prefix iso19152_1252: <http://def.isotc211.org/iso19152/2012/SpecialClasses#> .
-@prefix : <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/> .
 @prefix iso19160-1_1124: <http://def.isotc211.org/iso19160/-1/2015/ExternalClasses#> .
 @prefix iso19160-1_1128: <http://def.isotc211.org/iso19160/-1/2015/Profile_Minimal#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address> a owl:Ontology ;
-    rdfs:label "ISO 19160-1:2015 Address" ;
-    dcterms:source "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    owl:imports <http://def.isotc211.org/iso19150/-2/2012/base>,
-        <http://def.isotc211.org/iso19160/-1/2015/ExternalClasses>,
-        <http://def.isotc211.org/iso19160/-1/2015/Profile_Minimal> ;
-    owl:versionInfo "2015-12-15" ;
-
-    owl:versionIRI <http://reference.data.gov.au/def/ont/dataset/1.0> ;
-    dc:contributor "Australian Government Linked Data Working Group" ;
-    dct:created "2017-11-27"^^xsd:date ;
-    dc:publisher "Australian Government Linked Data Working Group" ;
-    dc:creator "ISO TC211, Group for Ontology Management" ;
-    rdfs:comment """This ontology is a version of the ISO TC211, Group for Ontology Management (GOM)'s OWL ontology interpretation of the ISO19160-1:2015 "Addressing -- Part 1: Conceptual model" standard (see https://www.iso.org/standard/61710.html) taken from that ontology's source code, published at https://github.com/ISO-TC211/GOM/tree/master/isotc211_GOM_harmonizedOntology/19160-1/2015. This version uses different URIs for the ontology so that they can be made to resolve through the Australian Government Linked Data Working Groups redirect services where the original ontology's URIs do not resolve. Additionally, this version adds some metadata, such as this explanation, and includes a human-readable (HTML) version of the ontology. As the GOM's version of the ontology evolves, we will keep this version up-to-date as we intend to only publish an easier-to-access version of their ontology here, not to profile it. """@en .
-
-iso19160-1Code:AddressAliasTypeCollection a skos:Collection ;
-    skos:member <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/classAlias>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/colloquialAlias>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/lifecycleAlias>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/localeAlias>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/unspecifiedAlias> ;
-    skos:prefLabel "AddressAliasType - Collection" .
-
-iso19160-1Code:AddressClass a skos:ConceptScheme ;
-    dcterms:isFormatOf :AddressClass ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:prefLabel "AddressClass - ConceptScheme" .
-
-iso19160-1Code:AddressClassCollection a skos:Collection ;
-    skos:prefLabel "AddressClass - Collection" .
-
-iso19160-1Code:AddressComponentTypeCollection a skos:Collection ;
-    skos:member <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/addressedObjectIdentifier>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/administrativeAreaName>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/countryCode>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/countryName>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/localityName>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/postOfficeName>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/postcode>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/thoroughfareName> ;
-    skos:prefLabel "AddressComponentType - Collection" .
-
-iso19160-1Code:AddressComponentValueTypeCollection a skos:Collection ;
-    skos:member <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/abbreviatedAlternative>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/colloquialAlternative>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/defaultValue>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/lifecycleAlternative>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/localeAlternative> ;
-    skos:prefLabel "AddressComponentValueType - Collection" .
-
-iso19160-1Code:AddressLifecycleStageCollection a skos:Collection ;
-    skos:member <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/current>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/proposed>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/rejected>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/reserved>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/retired>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/unknown> ;
-    skos:prefLabel "AddressLifecycleStage - Collection" .
-
-iso19160-1Code:AddressPositionType a skos:ConceptScheme ;
-    dcterms:isFormatOf :AddressPositionType ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:prefLabel "AddressPositionType - ConceptScheme" .
-
-iso19160-1Code:AddressPositionTypeCollection a skos:Collection ;
-    skos:prefLabel "AddressPositionType - Collection" .
-
-iso19160-1Code:AddressStatusCollection a skos:Collection ;
-    skos:member <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/official>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/unknown>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/unofficial> ;
-    skos:prefLabel "AddressStatus - Collection" .
-
-iso19160-1Code:AddressTypologyCollection a skos:Collection ;
-    skos:member <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/area>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/service>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/thoroughfare> ;
-    skos:prefLabel "AddressTypology - Collection" .
-
-iso19160-1Code:AddressableObjectLifecycleStageCollection a skos:Collection ;
-    skos:member <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/approved>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/ceasedToExist>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/exists>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/proposed>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/underConstruction>,
-        <http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/unknown> ;
-    skos:prefLabel "AddressableObjectLifecycleStage - Collection" .
-
-iso19160-1Code:AddressableObjectType a skos:ConceptScheme ;
-    dcterms:isFormatOf :AddressableObjectType ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:prefLabel "AddressableObjectType - ConceptScheme" .
-
-iso19160-1Code:AddressableObjectTypeCollection a skos:Collection ;
-    skos:prefLabel "AddressableObjectType - Collection" .
-
-iso19160-1Code:ReferenceObjectType a skos:ConceptScheme ;
-    dcterms:isFormatOf :ReferenceObjectType ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:prefLabel "ReferenceObjectType - ConceptScheme" .
-
-iso19160-1Code:ReferenceObjectTypeCollection a skos:Collection ;
-    skos:prefLabel "ReferenceObjectType - Collection" .
-
-:Address.business_branch a owl:ObjectProperty ;
-    rdfs:label "business" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19160-1_1124:BusinessRegister .
-
-:Address.business_headOffice a owl:ObjectProperty ;
-    rdfs:label "business" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19160-1_1124:BusinessRegister .
-
-:Address.childAddress a owl:ObjectProperty ;
-    rdfs:label "childAddress" ;
-    iso19150-2:associationName "parent" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :Address ;
-    owl:inverseOf :Address.parentAddress .
-
-:Address.client a owl:ObjectProperty ;
-    rdfs:label "client" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19160-1_1124:Client .
-
-:Address.employee a owl:ObjectProperty ;
-    rdfs:label "employee" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19160-1_1124:Employee .
-
-:Address.position a owl:ObjectProperty ;
-    rdfs:label "position" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressPosition ;
-    skos:definition "Geometry (coordinates) that represents the address location." .
-
-:Address.specification a owl:ObjectProperty ;
-    rdfs:label "specification" ;
-    iso19150-2:associationName "specifies" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressSpecification .
-
-:AddressComponent.valueComponent a owl:ObjectProperty ;
-    rdfs:label "valueComponent" ;
-    iso19150-2:associationName "withinScopeOf" ;
-    rdfs:domain :AddressComponent ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressComponent ;
-    owl:inverseOf :AddressComponent.scopeComponent .
-
-:AddressProvenance.lineage a owl:ObjectProperty ;
-    rdfs:label "lineage" ;
-    rdfs:domain :AddressProvenance ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19115-1_1508:LI_Lineage ;
-    skos:definition "Provenance, source(s) and production process(es) used in producing an address or address component." .
-
-:AddressSpecification.classSpecification a owl:ObjectProperty ;
-    rdfs:label "classSpecification" ;
-    rdfs:domain :AddressSpecification ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressClassSpecification ;
-    skos:definition "Information about one or more address classes, such as typology and valid component types." .
-
-:AddressableObject.childAddressableObject a owl:ObjectProperty ;
-    rdfs:label "childAddressableObject" ;
-    iso19150-2:associationName "parent" ;
-    rdfs:domain :AddressableObject ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressableObject ;
-    owl:inverseOf :AddressableObject.parentAddressableObject .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/classAlias> a :AddressAliasType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The address alias is from a different address class." ;
-    skos:inScheme iso19160-1Code:AddressAliasType ;
-    skos:prefLabel "classAlias" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/colloquialAlias> a :AddressAliasType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The address alias is a colloquial version of the address." ;
-    skos:inScheme iso19160-1Code:AddressAliasType ;
-    skos:prefLabel "colloquialAlias" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/lifecycleAlias> a :AddressAliasType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The address alias has a different lifecycle stage." ;
-    skos:inScheme iso19160-1Code:AddressAliasType ;
-    skos:prefLabel "lifecycleAlias" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/localeAlias> a :AddressAliasType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The address alias is in a different locale." ;
-    skos:inScheme iso19160-1Code:AddressAliasType ;
-    skos:prefLabel "localeAlias" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressAliasType/unspecifiedAlias> a :AddressAliasType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The type of address alias is not specified." ;
-    skos:inScheme iso19160-1Code:AddressAliasType ;
-    skos:prefLabel "unspecifiedAlias" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/addressedObjectIdentifier> a :AddressComponentType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "Identifier of the addressed object, e.g. building name or address number." ;
-    skos:inScheme iso19160-1Code:AddressComponentType ;
-    skos:prefLabel "addressedObjectIdentifier" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/administrativeAreaName> a :AddressComponentType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "Name of an administrative area." ;
-    skos:inScheme iso19160-1Code:AddressComponentType ;
-    skos:prefLabel "administrativeAreaName" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/countryCode> a :AddressComponentType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "ISO 3166-1 code for the country, territory or area of geopolitical interest." ;
-    skos:inScheme iso19160-1Code:AddressComponentType ;
-    skos:prefLabel "countryCode" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/countryName> a :AddressComponentType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "Name of a country." ;
-    skos:inScheme iso19160-1Code:AddressComponentType ;
-    skos:prefLabel "countryName" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/localityName> a :AddressComponentType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "Name of a locality." ;
-    skos:inScheme iso19160-1Code:AddressComponentType ;
-    skos:prefLabel "localityName" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/postOfficeName> a :AddressComponentType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "Name of a post office." ;
-    skos:inScheme iso19160-1Code:AddressComponentType ;
-    skos:prefLabel "postOfficeName" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/postcode> a :AddressComponentType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "Code used for the sorting of mail [SOURCE: UPU S42:2006]." ;
-    skos:inScheme iso19160-1Code:AddressComponentType ;
-    skos:prefLabel "postcode" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentType/thoroughfareName> a :AddressComponentType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "Name of a thoroughfare." ;
-    skos:inScheme iso19160-1Code:AddressComponentType ;
-    skos:prefLabel "thoroughfareName" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/abbreviatedAlternative> a :AddressComponentValueType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The alternative component value is an abbreviation." ;
-    skos:inScheme iso19160-1Code:AddressComponentValueType ;
-    skos:prefLabel "abbreviatedAlternative" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/colloquialAlternative> a :AddressComponentValueType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The alternative component value is a colloquial alternative for the component value." ;
-    skos:inScheme iso19160-1Code:AddressComponentValueType ;
-    skos:prefLabel "colloquialAlternative" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/defaultValue> a :AddressComponentValueType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The default component value (i.e. the one that is not an alternative)." ;
-    skos:inScheme iso19160-1Code:AddressComponentValueType ;
-    skos:prefLabel "defaultValue" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/lifecycleAlternative> a :AddressComponentValueType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The alternative component value was used in a different lifecycle stage." ;
-    skos:inScheme iso19160-1Code:AddressComponentValueType ;
-    skos:prefLabel "lifecycleAlternative" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressComponentValueType/localeAlternative> a :AddressComponentValueType,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The alternative component value is in a different locale." ;
-    skos:inScheme iso19160-1Code:AddressComponentValueType ;
-    skos:prefLabel "localeAlternative" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/current> a :AddressLifecycleStage,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The address or address component is currently in use." ;
-    skos:inScheme iso19160-1Code:AddressLifecycleStage ;
-    skos:prefLabel "current" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/proposed> a :AddressLifecycleStage,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The address or address component has been proposed, i.e. the relevant authority has initiated approval procedures for the use of the address or address component." ;
-    skos:inScheme iso19160-1Code:AddressLifecycleStage ;
-    skos:prefLabel "proposed" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/rejected> a :AddressLifecycleStage,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The address or address component was proposed but rejected." ;
-    skos:inScheme iso19160-1Code:AddressLifecycleStage ;
-    skos:prefLabel "rejected" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/reserved> a :AddressLifecycleStage,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The address or address component has been reserved for future use." ;
-    skos:inScheme iso19160-1Code:AddressLifecycleStage ;
-    skos:prefLabel "reserved" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/retired> a :AddressLifecycleStage,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The address or address component was in use at some stage, but not anymore." ;
-    skos:inScheme iso19160-1Code:AddressLifecycleStage ;
-    skos:prefLabel "retired" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressLifecycleStage/unknown> a :AddressLifecycleStage,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The lifecycle stage of the address or address component is unknown." ;
-    skos:inScheme iso19160-1Code:AddressLifecycleStage ;
-    skos:prefLabel "unknown" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/official> a :AddressStatus,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "An official addressing authority assigned the address." ;
-    skos:inScheme iso19160-1Code:AddressStatus ;
-    skos:prefLabel "official" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/unknown> a :AddressStatus,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The status of the address is unknown." ;
-    skos:inScheme iso19160-1Code:AddressStatus ;
-    skos:prefLabel "unknown" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressStatus/unofficial> a :AddressStatus,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The address was not assigned by an official addressing authority." ;
-    skos:inScheme iso19160-1Code:AddressStatus ;
-    skos:prefLabel "unofficial" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/area> a :AddressTypology,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The address class is based on a division of land or water into demarcated areas, such as neighbourhoods or precincts or cadastral features." ;
-    skos:inScheme iso19160-1Code:AddressTypology ;
-    skos:prefLabel "area" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/service> a :AddressTypology,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The address class is based on delivery or collection services, such as a group of post boxes at the same location or poste restante." ;
-    skos:inScheme iso19160-1Code:AddressTypology ;
-    skos:prefLabel "service" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressTypology/thoroughfare> a :AddressTypology,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The address class is based on navigable access features, such as streets or canals." ;
-    skos:inScheme iso19160-1Code:AddressTypology ;
-    skos:prefLabel "thoroughfare" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/approved> a :AddressableObjectLifecycleStage,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The establishment or construction of the addressable object has been approved, i.e. the relevant authority has given approval for the establishment or construction of the addressable object." ;
-    skos:inScheme iso19160-1Code:AddressableObjectLifecycleStage ;
-    skos:prefLabel "approved" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/ceasedToExist> a :AddressableObjectLifecycleStage,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The addressable object does not exist anymore (e.g. it has been demolished)." ;
-    skos:inScheme iso19160-1Code:AddressableObjectLifecycleStage ;
-    skos:prefLabel "ceasedToExist" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/exists> a :AddressableObjectLifecycleStage,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The addressable object exists." ;
-    skos:inScheme iso19160-1Code:AddressableObjectLifecycleStage ;
-    skos:prefLabel "exists" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/proposed> a :AddressableObjectLifecycleStage,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The establishment or construction of the addressable object has been proposed, i.e. the relevant authority has initiated approval procedures." ;
-    skos:inScheme iso19160-1Code:AddressableObjectLifecycleStage ;
-    skos:prefLabel "proposed" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/underConstruction> a :AddressableObjectLifecycleStage,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The establishment or construction of the addressable object is in progress." ;
-    skos:inScheme iso19160-1Code:AddressableObjectLifecycleStage ;
-    skos:prefLabel "underConstruction" .
-
-<http://reference.data.gov.au/def/ont/iso19160-1-address/Address/code/AddressableObjectLifecycleStage/unknown> a :AddressableObjectLifecycleStage,
-        skos:Concept ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:definition "The lifecycle stage of the addressable object is unknown." ;
-    skos:inScheme iso19160-1Code:AddressableObjectLifecycleStage ;
-    skos:prefLabel "unknown" .
-
-:Address.addressComponent a owl:ObjectProperty ;
-    rdfs:label "addressComponent" ;
-    iso19150-2:aggregationType "partOfSharedAggregation" ;
-    iso19150-2:associationName "comprises" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressComponent .
-
-:Address.class a owl:ObjectProperty ;
-    rdfs:label "class" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressClass ;
-    skos:definition "Code that specifies the address class to which the address belongs." .
-
-:Address.id a owl:ObjectProperty ;
-    rdfs:label "id" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19152_1252:Oid ;
-    skos:definition "Unique character string that identifies the address." .
-
-:Address.lifecycleStage a owl:ObjectProperty ;
-    rdfs:label "lifecycleStage" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressLifecycleStage ;
-    skos:definition "Code that specifies the phase an address has reached in its lifecycle." .
-
-:Address.lifespan a owl:ObjectProperty ;
-    rdfs:label "lifespan" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :Lifespan ;
-    skos:definition "Information about the period over which an address exists" .
-
-:Address.locale a owl:ObjectProperty ;
-    rdfs:label "locale" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19135-1_1058:RE_Locale ;
-    skos:definition "A set or parameters that specify the cultural and linguistic environment." .
-
-:Address.preferenceLevel a owl:DatatypeProperty ;
-    rdfs:label "preferenceLevel" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range xsd:integer ;
-    skos:definition "Indicates the ranking of the address in a set of address aliases. 1 indicates highest ranking.EXAMPLE 1	A building on a street corner could be referenced by two addresses. One of them could have its preferenceLevel set to 1.EXAMPLE 2	In Switzerland, addresses containing German and French names, e.g. Biel (German) and Bienne (French), are different addresses with the same preference level." .
-
-:Address.provenance a owl:ObjectProperty ;
-    rdfs:label "provenance" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressProvenance ;
-    skos:definition "Information about the source or origin of the address, such as the authority who assigned the address, the owner of the address data instance, and lineage of the address." .
-
-:Address.status a owl:ObjectProperty ;
-    rdfs:label "status" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressStatus ;
-    skos:definition "Code that specifies the nature of the address assignment." .
-
-:Address.theAddressedPeriod a owl:ObjectProperty ;
-    rdfs:label "theAddressedPeriod" ;
-    iso19150-2:associationName "allows unambiguous determination" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressedPeriod .
-
-:AddressAlias.address a owl:ObjectProperty ;
-    rdfs:label "address" ;
-    iso19150-2:associationName "alias" ;
-    rdfs:domain :AddressAlias ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :Address ;
-    owl:inverseOf :Address.theAddressAlias .
-
-:AddressAlias.aliasAddress a owl:ObjectProperty ;
-    rdfs:label "aliasAddress" ;
-    iso19150-2:associationName "alias" ;
-    rdfs:domain :AddressAlias ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :Address ;
-    owl:inverseOf :Address.theAddressAlias .
-
-:AddressAlias.type a owl:ObjectProperty ;
-    rdfs:label "type" ;
-    rdfs:domain :AddressAlias ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressAliasType ;
-    skos:definition "Code that specifies which justification for an alias applies to the address at the destination end of the association. The default value is unspecifiedAlias." .
-
-:AddressClassSpecification.class a owl:ObjectProperty ;
-    rdfs:label "class" ;
-    rdfs:domain :AddressClassSpecification ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressClass ;
-    skos:definition "Code that specifies the address class to which the address belongs." .
-
-:AddressClassSpecification.component a owl:ObjectProperty ;
-    rdfs:label "component" ;
-    rdfs:domain :AddressClassSpecification ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressComponentType ;
-    skos:definition "The set of one or more address component types that may be considered together in various combinations to constitute an address of this class." .
-
-:AddressClassSpecification.typology a owl:ObjectProperty ;
-    rdfs:label "typology" ;
-    rdfs:domain :AddressClassSpecification ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressTypology ;
-    skos:definition "Code that specifies the type of address class. " .
-
-:AddressComponent.id a owl:ObjectProperty ;
-    rdfs:label "id" ;
-    rdfs:domain :AddressComponent ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19152_1252:Oid ;
-    skos:definition "Unique character string that identifies the address component." .
-
-:AddressComponent.lifecycleStage a owl:ObjectProperty ;
-    rdfs:label "lifecycleStage" ;
-    rdfs:domain :AddressComponent ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressLifecycleStage ;
-    skos:definition "Code that specifies the phase an address component has reached in its lifecycle." .
-
-:AddressComponent.lifespan a owl:ObjectProperty ;
-    rdfs:label "lifespan" ;
-    rdfs:domain :AddressComponent ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :Lifespan ;
-    skos:definition "Information about the period over which an address component exists.NOTE 	See Annex D for lifecycle examples of an address component." .
-
-:AddressComponent.locale a owl:ObjectProperty ;
-    rdfs:label "locale" ;
-    rdfs:domain :AddressComponent ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19135-1_1058:RE_Locale ;
-    skos:definition "A set of parameters that specify the cultural and linguistic environment." .
-
-:AddressComponent.provenance a owl:ObjectProperty ;
-    rdfs:label "provenance" ;
-    rdfs:domain :AddressComponent ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressProvenance ;
-    skos:definition "Information about the source or origin of the address component, such as the authority who assigned the address component value, the owner of the address component data instance, and the lineage of the address component." .
-
-:AddressComponent.referenceObject a owl:ObjectProperty ;
-    rdfs:label "referenceObject" ;
-    iso19150-2:associationName "references" ;
-    rdfs:domain :AddressComponent ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :ReferenceObject .
-
-:AddressComponent.type a owl:ObjectProperty ;
-    rdfs:label "type" ;
-    iso19150-2:constraint "type is mandatory if there are no subclasses of AddressableObject" ;
-    rdfs:domain :AddressComponent ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressComponentType ;
-    skos:definition "Code that specifies the kind of address component." .
-
-:AddressComponent.valueInformation a owl:ObjectProperty ;
-    rdfs:label "valueInformation" ;
-    rdfs:domain :AddressComponent ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressComponentValue ;
-    skos:definition "Value of and information about one or more address component values." .
-
-:AddressComponentValue.locale a owl:ObjectProperty ;
-    rdfs:label "locale" ;
-    rdfs:domain :AddressComponentValue ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19135_1055:RE_Locale ;
-    skos:definition "A set of parameters that specify the cultural and linguistic environment." .
-
-:AddressComponentValue.preferenceLevel a owl:DatatypeProperty ;
-    rdfs:label "preferenceLevel" ;
-    rdfs:domain :AddressComponentValue ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range xsd:integer ;
-    skos:definition "Indicates the ranking of the address component in a set of alternatives. 1 indicates highest ranking.EXAMPLE 1	A building on a street corner could be referenced by two addresses, each with a different component value for the thoroughfare name address component. For one of them the preferenceLevel could be set to 1.EXAMPLE 2	In Switzerland, Biel (German) and Bienne (French) are different address components with the same preference level." .
-
-:AddressComponentValue.type a owl:ObjectProperty ;
-    rdfs:label "type" ;
-    rdfs:domain :AddressComponentValue ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressComponentValueType ;
-    skos:definition "Code that specifies the kind of value, i.e. whether it is a variation of the default address component value, and if so, what the variation is." .
-
-:AddressComponentValue.value a owl:ObjectProperty ;
-    rdfs:label "value" ;
-    rdfs:domain :AddressComponentValue ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19103_300:Any ;
-    skos:definition "One or more instances of the value of the address component." .
-
-:AddressPosition.geometry a owl:ObjectProperty ;
-    rdfs:label "geometry" ;
-    rdfs:domain :AddressPosition ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19107_401:GM_Object ;
-    skos:definition "Geometry (coordinates) representing the address position." .
-
-:AddressPosition.type a owl:ObjectProperty ;
-    rdfs:label "type" ;
-    rdfs:domain :AddressPosition ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressPositionType ;
-    skos:definition "Code that specifies how the geometry shall be interpreted.EXAMPLES	centroid, streetFront, approximated" .
-
-:AddressProvenance.authority a owl:ObjectProperty ;
-    rdfs:label "authority" ;
-    rdfs:domain :AddressProvenance ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19115-1_1505:CI_Organisation ;
-    skos:definition "The body that assigns the address or address component value." .
-
-:AddressProvenance.owner a owl:ObjectProperty ;
-    rdfs:label "owner" ;
-    rdfs:domain :AddressProvenance ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19115-1_1505:CI_Organisation ;
-    skos:definition "Organization that maintains the data." .
-
-:AddressSpecification.addressSpecificationCitation a owl:ObjectProperty ;
-    rdfs:label "addressSpecificationCitation" ;
-    rdfs:domain :AddressSpecification ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19115-1_1505:CI_Citation ;
-    skos:definition "Reference to a specification or document that contains a definition of the address classes." .
-
-:AddressableObject.id a owl:ObjectProperty ;
-    rdfs:label "id" ;
-    rdfs:domain :AddressableObject ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19152_1252:Oid ;
-    skos:definition "Unique character string that identifies the addressable object." .
-
-:AddressableObject.lifecycleStage a owl:ObjectProperty ;
-    rdfs:label "lifecycleStage" ;
-    rdfs:domain :AddressableObject ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressableObjectLifecycleStage ;
-    skos:definition "Code that specifies the phase an addressable object has reached in its lifecycle." .
-
-:AddressableObject.lifespan a owl:ObjectProperty ;
-    rdfs:label "lifespan" ;
-    rdfs:domain :AddressableObject ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :Lifespan ;
-    skos:definition "Information about the period over which an addressable object exists." .
-
-:AddressableObject.position a owl:ObjectProperty ;
-    rdfs:label "position" ;
-    rdfs:domain :AddressableObject ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressPosition ;
-    skos:definition "Geometry (coordinates) representing the addressable object." .
-
-:AddressableObject.theAddressedPeriod a owl:ObjectProperty ;
-    rdfs:label "theAddressedPeriod" ;
-    iso19150-2:associationName "allows unambiguous determination" ;
-    rdfs:domain :AddressableObject ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressedPeriod .
-
-:AddressableObject.type a owl:ObjectProperty ;
-    rdfs:label "type" ;
-    rdfs:domain :AddressableObject ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressableObjectType ;
-    skos:definition "Code that specifies the kind of object to which an address may be assigned." .
-
-:AddressedPeriod.address a owl:ObjectProperty ;
-    rdfs:label "address" ;
-    iso19150-2:associationName "allows unambiguous determination" ;
-    rdfs:domain :AddressedPeriod ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :Address ;
-    owl:inverseOf :Address.theAddressedPeriod .
-
-:AddressedPeriod.addressedFrom a owl:DatatypeProperty ;
-    rdfs:label "addressedFrom" ;
-    rdfs:domain :AddressedPeriod ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range xsd:dateTime ;
-    skos:definition "Date and time from which the addressed object is unambiguously determined by the address." .
-
-:AddressedPeriod.addressedObject a owl:ObjectProperty ;
-    rdfs:label "addressedObject" ;
-    iso19150-2:associationName "allows unambiguous determination" ;
-    rdfs:domain :AddressedPeriod ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressableObject ;
-    owl:inverseOf :AddressableObject.theAddressedPeriod .
-
-:AddressedPeriod.addressedTo a owl:DatatypeProperty ;
-    rdfs:label "addressedTo" ;
-    rdfs:domain :AddressedPeriod ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range xsd:dateTime ;
-    skos:definition "Date and time when the addressed object ceased to be unambiguously determined by the address." .
-
-:Lifespan.closeRecord a owl:DatatypeProperty ;
-    rdfs:label "closeRecord" ;
-    rdfs:domain :Lifespan ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range xsd:dateTime ;
-    skos:definition "Specifies the date and time at which this version of the data object was superseded by another version or retired in the dataset." .
-
-:Lifespan.openRecord a owl:DatatypeProperty ;
-    rdfs:label "openRecord" ;
-    rdfs:domain :Lifespan ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range xsd:dateTime ;
-    skos:definition "Specifies the date and time at which this version of the data object was inserted into the dataset. " .
-
-:Lifespan.validFrom a owl:DatatypeProperty ;
-    rdfs:label "validFrom" ;
-    rdfs:domain :Lifespan ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range xsd:dateTime ;
-    skos:definition "Date and time from which the object is valid in the physical world." .
-
-:Lifespan.validTo a owl:DatatypeProperty ;
-    rdfs:label "validTo" ;
-    rdfs:domain :Lifespan ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range xsd:dateTime ;
-    skos:definition "Date and time when this object ceased to be valid in the physical world." .
-
-:Lifespan.version a owl:DatatypeProperty ;
-    rdfs:label "version" ;
-    rdfs:domain :Lifespan ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range xsd:string ;
-    skos:definition "Unique identifier of this variant of the address record.NOTE	The version is incremented with any change to the data object" .
-
-:ReferenceObject.addressComponent a owl:ObjectProperty ;
-    rdfs:label "addressComponent" ;
-    iso19150-2:associationName "references" ;
-    rdfs:domain :ReferenceObject ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressComponent ;
-    owl:inverseOf :AddressComponent.referenceObject .
-
-:ReferenceObject.geometry a owl:ObjectProperty ;
-    rdfs:label "geometry" ;
-    rdfs:domain :ReferenceObject ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19107_401:GM_Object ;
-    skos:definition "Geometry (coordinates) representing the reference object." .
-
-:ReferenceObject.id a owl:ObjectProperty ;
-    rdfs:label "id" ;
-    rdfs:domain :ReferenceObject ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range iso19152_1252:Oid ;
-    skos:definition "Unique character string that identifies the reference object." .
-
-:ReferenceObject.type a owl:ObjectProperty ;
-    rdfs:label "type" ;
-    rdfs:domain :ReferenceObject ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :ReferenceObjectType ;
-    skos:definition "Code that specifies the kind of reference object." .
-
-:Address.parentAddress a owl:ObjectProperty ;
-    rdfs:label "parentAddress" ;
-    iso19150-2:associationName "parent" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :Address .
-
-:Address.theAddressAlias a owl:ObjectProperty ;
-    rdfs:label "theAddressAlias" ;
-    iso19150-2:associationName "alias" ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressAlias .
-
-:AddressComponent.scopeComponent a owl:ObjectProperty ;
-    rdfs:label "scopeComponent" ;
-    iso19150-2:associationName "withinScopeOf" ;
-    rdfs:domain :AddressComponent ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressComponent .
-
-:AddressPositionType a owl:Class ;
-    rdfs:label "AddressPositionType" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf skos:Concept .
-
-:AddressableObject.parentAddressableObject a owl:ObjectProperty ;
-    rdfs:label "parentAddressableObject" ;
-    iso19150-2:associationName "parent" ;
-    rdfs:domain :AddressableObject ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:range :AddressableObject .
-
-:AddressableObjectType a owl:Class ;
-    rdfs:label "AddressableObjectType" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf skos:Concept .
-
-:ReferenceObjectType a owl:Class ;
-    rdfs:label "ReferenceObjectType" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf skos:Concept .
-
-iso19160-1Code:AddressStatus a skos:ConceptScheme ;
-    dcterms:isFormatOf :AddressStatus ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:prefLabel "AddressStatus - ConceptScheme" .
-
-iso19160-1Code:AddressTypology a skos:ConceptScheme ;
-    dcterms:isFormatOf :AddressTypology ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:prefLabel "AddressTypology - ConceptScheme" .
-
-:AddressSpecification a owl:Class ;
-    rdfs:label "AddressSpecification" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom :AddressClassSpecification ;
-            owl:onProperty :AddressSpecification.classSpecification ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19115-1_1505:CI_Citation ;
-            owl:onProperty :AddressSpecification.addressSpecificationCitation ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressSpecification.addressSpecificationCitation ] ;
-    skos:definition "A reference to a specification and description of a set of address class specifications, which  specify the typology and the set of valid component types for the class." .
-
-:AddressAlias a owl:Class ;
-    rdfs:label "AddressAlias" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom :Address ;
-            owl:onProperty :AddressAlias.aliasAddress ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :Address ;
-            owl:onProperty :AddressAlias.address ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressAliasType ;
-            owl:onProperty :AddressAlias.type ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressAlias.type ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressAlias.aliasAddress ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressAlias.address ] ;
-    skos:definition "Information about an address alias." .
-
-:AddressClass a owl:Class ;
-    rdfs:label "AddressClass" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf skos:Concept .
-
-:AddressClassSpecification a owl:Class ;
-    rdfs:label "AddressClassSpecification" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom :AddressComponentType ;
-            owl:onProperty :AddressClassSpecification.component ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressClass ;
-            owl:onProperty :AddressClassSpecification.class ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressClassSpecification.typology ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressTypology ;
-            owl:onProperty :AddressClassSpecification.typology ],
-        [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressClassSpecification.component ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressClassSpecification.class ] ;
-    skos:definition "Information about the address class." .
-
-iso19160-1Code:AddressAliasType a skos:ConceptScheme ;
-    dcterms:isFormatOf :AddressAliasType ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:prefLabel "AddressAliasType - ConceptScheme" .
-
-iso19160-1Code:AddressComponentValueType a skos:ConceptScheme ;
-    dcterms:isFormatOf :AddressComponentValueType ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:prefLabel "AddressComponentValueType - ConceptScheme" .
-
-:AddressComponentValue a owl:Class ;
-    rdfs:label "AddressComponentValue" ;
-    iso19150-2:constraint "For Locale conformance, locale shall be mandatory" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressComponentValue.type ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressComponentValue.value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19135_1055:RE_Locale ;
-            owl:onProperty :AddressComponentValue.locale ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressComponentValueType ;
-            owl:onProperty :AddressComponentValue.type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19103_300:Any ;
-            owl:onProperty :AddressComponentValue.value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressComponentValue.preferenceLevel ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
-            owl:onProperty :AddressComponentValue.preferenceLevel ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressComponentValue.locale ] ;
-    skos:definition "Information about the value of an address component" .
-
-:AddressPosition a owl:Class ;
-    rdfs:label "AddressPosition" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom :AddressPositionType ;
-            owl:onProperty :AddressPosition.type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressPosition.type ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressPosition.geometry ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19107_401:GM_Object ;
-            owl:onProperty :AddressPosition.geometry ] ;
-    skos:definition "Information about the representative position of an address." .
-
-:AddressStatus a owl:Class ;
-    rdfs:label "AddressStatus" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf skos:Concept .
-
-:AddressTypology a owl:Class ;
-    rdfs:label "AddressTypology" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf skos:Concept .
-
-:ReferenceObject a owl:Class ;
-    rdfs:label "ReferenceObject" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom iso19152_1252:Oid ;
-            owl:onProperty :ReferenceObject.id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :ReferenceObject.type ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :ReferenceObject.id ],
-        [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :ReferenceObject.addressComponent ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressComponent ;
-            owl:onProperty :ReferenceObject.addressComponent ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :ReferenceObject.geometry ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :ReferenceObjectType ;
-            owl:onProperty :ReferenceObject.type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19107_401:GM_Object ;
-            owl:onProperty :ReferenceObject.geometry ] ;
-    skos:definition "The object to which the address component value may refer. " .
-
-iso19160-1Code:AddressLifecycleStage a skos:ConceptScheme ;
-    dcterms:isFormatOf :AddressLifecycleStage ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:prefLabel "AddressLifecycleStage - ConceptScheme" .
-
-iso19160-1Code:AddressableObjectLifecycleStage a skos:ConceptScheme ;
-    dcterms:isFormatOf :AddressableObjectLifecycleStage ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:prefLabel "AddressableObjectLifecycleStage - ConceptScheme" .
-
-:AddressProvenance a owl:Class ;
-    rdfs:label "AddressProvenance" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom iso19115-1_1505:CI_Organisation ;
-            owl:onProperty :AddressProvenance.owner ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressProvenance.owner ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19115-1_1508:LI_Lineage ;
-            owl:onProperty :AddressProvenance.lineage ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19115-1_1505:CI_Organisation ;
-            owl:onProperty :AddressProvenance.authority ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressProvenance.authority ] ;
-    skos:definition "Provenance information, e.g. the source or origin of the record, changes to the record, and organisations or individuals that have had custody of the record since its creation." .
-
-:AddressAliasType a owl:Class ;
-    rdfs:label "AddressAliasType" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf skos:Concept .
-
-:AddressComponentValueType a owl:Class ;
-    rdfs:label "AddressComponentValueType" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf skos:Concept .
-
-:AddressedPeriod a owl:Class ;
-    rdfs:label "AddressedPeriod" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty :AddressedPeriod.addressedTo ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty :AddressedPeriod.addressedFrom ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressedPeriod.address ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressedPeriod.addressedFrom ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressedPeriod.addressedObject ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :Address ;
-            owl:onProperty :AddressedPeriod.address ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressedPeriod.addressedTo ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressableObject ;
-            owl:onProperty :AddressedPeriod.addressedObject ] ;
-    skos:definition "The period during which the address as associated with the addressed object." .
-
-iso19160-1Code:AddressComponentType a skos:ConceptScheme ;
-    dcterms:isFormatOf :AddressComponentType ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    skos:prefLabel "AddressComponentType - ConceptScheme" .
-
-:AddressableObjectLifecycleStage a owl:Class ;
-    rdfs:label "AddressableObjectLifecycleStage" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf skos:Concept .
-
-:AddressLifecycleStage a owl:Class ;
-    rdfs:label "AddressLifecycleStage" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf skos:Concept .
-
-:Lifespan a owl:Class ;
-    rdfs:label "Lifespan" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty :Lifespan.version ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty :Lifespan.openRecord ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty :Lifespan.closeRecord ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :Lifespan.version ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :Lifespan.validTo ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :Lifespan.openRecord ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :Lifespan.closeRecord ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty :Lifespan.validTo ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :Lifespan.validFrom ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty :Lifespan.validFrom ] ;
-    skos:definition "Information to describe the lifespan of an address, adress component or addressable object." .
-
-:AddressComponentType a owl:Class ;
-    rdfs:label "AddressComponentType" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf skos:Concept .
-
-:AddressableObject a owl:Class ;
-    rdfs:label "AddressableObject" ;
-    iso19150-2:constraint "If no AddressableObject subclasses, then type is mandatory" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressableObject.type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressableObject.lifespan ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressableObject ;
-            owl:onProperty :AddressableObject.childAddressableObject ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressableObject.lifecycleStage ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressableObject.id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressableObjectLifecycleStage ;
-            owl:onProperty :AddressableObject.lifecycleStage ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressPosition ;
-            owl:onProperty :AddressableObject.position ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressableObject.position ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :Lifespan ;
-            owl:onProperty :AddressableObject.lifespan ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressedPeriod ;
-            owl:onProperty :AddressableObject.theAddressedPeriod ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressableObject.parentAddressableObject ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressableObject ;
-            owl:onProperty :AddressableObject.parentAddressableObject ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19152_1252:Oid ;
-            owl:onProperty :AddressableObject.id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressableObjectType ;
-            owl:onProperty :AddressableObject.type ] ;
-    skos:definition "An object that may be assigned an address.lt.i.gt...lt..sl.i.gt." .
-
-:AddressComponent a owl:Class ;
-    rdfs:label "AddressComponent" ;
-    iso19150-2:constraint "For Provenance conformance, provenance shall be mandatory" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressComponent.lifespan ],
-        [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressComponent.valueInformation ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressComponent.scopeComponent ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19152_1252:Oid ;
-            owl:onProperty :AddressComponent.id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressComponentValue ;
-            owl:onProperty :AddressComponent.valueInformation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressLifecycleStage ;
-            owl:onProperty :AddressComponent.lifecycleStage ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressComponent.provenance ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressComponent.lifecycleStage ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressComponent ;
-            owl:onProperty :AddressComponent.scopeComponent ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressComponent.locale ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressComponent.type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressComponent ;
-            owl:onProperty :AddressComponent.valueComponent ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressProvenance ;
-            owl:onProperty :AddressComponent.provenance ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :Lifespan ;
-            owl:onProperty :AddressComponent.lifespan ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressComponentType ;
-            owl:onProperty :AddressComponent.type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :AddressComponent.id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19135-1_1058:RE_Locale ;
-            owl:onProperty :AddressComponent.locale ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :ReferenceObject ;
-            owl:onProperty :AddressComponent.referenceObject ] ;
-    skos:definition "Constituent part of an address." .
-
-:Address a owl:Class ;
-    rdfs:label "Address" ;
-    iso19150-2:constraint "For Provenance conformance, provenance shall be mandatory" ;
-    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom :Lifespan ;
-            owl:onProperty :Address.lifespan ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :Address.preferenceLevel ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressedPeriod ;
-            owl:onProperty :Address.theAddressedPeriod ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressProvenance ;
-            owl:onProperty :Address.provenance ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressComponent ;
-            owl:onProperty :Address.addressComponent ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :Address.provenance ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :Address.locale ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19152_1252:Oid ;
-            owl:onProperty :Address.id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :Address.status ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressAlias ;
-            owl:onProperty :Address.theAddressAlias ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :Address.id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressClass ;
-            owl:onProperty :Address.class ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressLifecycleStage ;
-            owl:onProperty :Address.lifecycleStage ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :Address.lifespan ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressSpecification ;
-            owl:onProperty :Address.specification ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :Address ;
-            owl:onProperty :Address.parentAddress ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :Address.class ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :Address ;
-            owl:onProperty :Address.childAddress ],
-        [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :Address.addressComponent ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressStatus ;
-            owl:onProperty :Address.status ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :Address.lifecycleStage ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19160-1_1124:BusinessRegister ;
-            owl:onProperty :Address.business_headOffice ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19160-1_1124:BusinessRegister ;
-            owl:onProperty :Address.business_branch ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19160-1_1124:Employee ;
-            owl:onProperty :Address.employee ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19160-1_1124:Client ;
-            owl:onProperty :Address.client ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty :Address.parentAddress ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :AddressPosition ;
-            owl:onProperty :Address.position ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:integer ;
-            owl:onProperty :Address.preferenceLevel ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom iso19135-1_1058:RE_Locale ;
-            owl:onProperty :Address.locale ] ;
-    skos:definition "Structured information.lt.b.gt. .lt..sl.b.gt.that allows the unambiguous determination of an object.lt.b.gt. .lt..sl.b.gt.for purposes of identification and location." .
+@base <http://reference.data.gov.au/def/ont/iso19160-1-address> .
+
+<http://reference.data.gov.au/def/ont/iso19160-1-address> rdf:type owl:Ontology ;
+                                                           owl:versionIRI <http://reference.data.gov.au/def/ont/iso19160-1-address/1.1> ;
+                                                           owl:imports <http://def.isotc211.org/iso19160/-1/2015/Profile_Minimal> ,
+                                                                       <http://def.isotc211.org/iso19160/-1/2015/ExternalClasses> ,
+                                                                       <http://def.isotc211.org/iso19150/-2/2012/base> ;
+                                                           dc:contributor "Australian Government Linked Data Working Group"^^xsd:string ;
+                                                           dc:creator "ISO TC211, Group for Ontology Management"^^xsd:string ;
+                                                           rdfs:label "ISO 19160-1:2015 Address" ;
+                                                           rdfs:comment """This ontology is a version of the ISO TC211, Group for Ontology Management (GOM)'s OWL ontology interpretation of the ISO19160-1:2015 \"Addressing -- Part 1: Conceptual model\" standard (see https://www.iso.org/standard/61710.html) taken from that ontology's source code, published at https://github.com/ISO-TC211/GOM/tree/master/isotc211_GOM_harmonizedOntology/19160-1/2015.
+
+This version uses different URIs for the ontology so that they can be made to resolve through the Australian Government Linked Data Working Groups redirect services where the original ontology's URIs do not resolve.
+
+This ontology also has had the code lists removed thus preserving the data model but not the vocabularies. The code lists are published separately at http://reference.data.gov.au/def/ont/iso19160-1-address/codelist.
+
+Additionally, this version adds some metadata, such as this explanation, some further annotation properties to better display elements of the ontology and includes a human-readable (HTML) version of the ontology generated from the RDF version.
+
+As the GOM's version of the ontology evolves, we will keep this version up-to-date as we intend to only publish an easier-to-access version of their ontology here, not to profile it."""@en ;
+                                                           dcterms:source "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                                           owl:versionInfo "1.1"^^xsd:string ;
+                                                           dc:publisher "Australian Government Linked Data Working Group"^^xsd:string ;
+                                                           dc:contributor "Nicholas Car"^^xsd:string ;
+                                                           dcterms:created "2017-11-27"^^xsd:date .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://def.isotc211.org/iso19150/-2/2012/base#aggregationType
+iso19150-2:aggregationType rdf:type owl:AnnotationProperty ;
+                           rdfs:label "aggregation type"@en .
+
+
+###  http://def.isotc211.org/iso19150/-2/2012/base#associationName
+iso19150-2:associationName rdf:type owl:AnnotationProperty ;
+                           rdfs:label "assocation name"@en .
+
+
+###  http://def.isotc211.org/iso19150/-2/2012/base#constraint
+iso19150-2:constraint rdf:type owl:AnnotationProperty ;
+                      rdfs:label "constraint"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.addressComponent
+:Address.addressComponent rdf:type owl:ObjectProperty ;
+                          rdfs:domain :Address ;
+                          rdfs:range :AddressComponent ;
+                          iso19150-2:aggregationType "partOfSharedAggregation" ;
+                          iso19150-2:associationName "comprises" ;
+                          rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                          rdfs:label "address component"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.business_branch
+:Address.business_branch rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Address ;
+                         rdfs:range iso19160-1_1124:BusinessRegister ;
+                         rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                         rdfs:label "business"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.business_headOffice
+:Address.business_headOffice rdf:type owl:ObjectProperty ;
+                             rdfs:domain :Address ;
+                             rdfs:range iso19160-1_1124:BusinessRegister ;
+                             rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                             rdfs:label "business"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.childAddress
+:Address.childAddress rdf:type owl:ObjectProperty ;
+                      owl:inverseOf :Address.parentAddress ;
+                      rdfs:domain :Address ;
+                      rdfs:range :Address ;
+                      iso19150-2:associationName "parent" ;
+                      rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                      rdfs:label "child address"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.class
+:Address.class rdf:type owl:ObjectProperty ;
+               rdfs:domain :Address ;
+               rdfs:range :AddressClass ;
+               rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+               rdfs:label "class"@en ;
+               skos:definition "Code that specifies the address class to which the address belongs."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.client
+:Address.client rdf:type owl:ObjectProperty ;
+                rdfs:domain :Address ;
+                rdfs:range iso19160-1_1124:Client ;
+                rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                rdfs:label "client"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.employee
+:Address.employee rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Address ;
+                  rdfs:range iso19160-1_1124:Employee ;
+                  rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                  rdfs:label "employee"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.id
+:Address.id rdf:type owl:ObjectProperty ;
+            rdfs:domain :Address ;
+            rdfs:range iso19152_1252:Oid ;
+            rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+            rdfs:label "id"@en ;
+            skos:definition "Unique character string that identifies the address."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.lifecycleStage
+:Address.lifecycleStage rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Address ;
+                        rdfs:range :AddressLifecycleStage ;
+                        rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                        rdfs:label "lifecycle stage"@en ;
+                        skos:definition "Code that specifies the phase an address has reached in its lifecycle."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.lifespan
+:Address.lifespan rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Address ;
+                  rdfs:range :Lifespan ;
+                  rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                  rdfs:label "lifespan"@en ;
+                  skos:definition "Information about the period over which an address exists"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.locale
+:Address.locale rdf:type owl:ObjectProperty ;
+                rdfs:domain :Address ;
+                rdfs:range iso19135-1_1058:RE_Locale ;
+                rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                rdfs:label "locale"@en ;
+                skos:definition "A set or parameters that specify the cultural and linguistic environment."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.parentAddress
+:Address.parentAddress rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Address ;
+                       rdfs:range :Address ;
+                       iso19150-2:associationName "parent" ;
+                       rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                       rdfs:label "parent address"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.position
+:Address.position rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Address ;
+                  rdfs:range :AddressPosition ;
+                  rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                  rdfs:label "position"@en ;
+                  skos:definition "Geometry (coordinates) that represents the address location."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.provenance
+:Address.provenance rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Address ;
+                    rdfs:range :AddressProvenance ;
+                    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                    rdfs:label "provenance"@en ;
+                    skos:definition "Information about the source or origin of the address, such as the authority who assigned the address, the owner of the address data instance, and lineage of the address."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.specification
+:Address.specification rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Address ;
+                       rdfs:range :AddressSpecification ;
+                       iso19150-2:associationName "specifies" ;
+                       rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                       rdfs:label "specification"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.status
+:Address.status rdf:type owl:ObjectProperty ;
+                rdfs:domain :Address ;
+                rdfs:range :AddressStatus ;
+                rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                rdfs:label "status"@en ;
+                skos:definition "Code that specifies the nature of the address assignment."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.theAddressAlias
+:Address.theAddressAlias rdf:type owl:ObjectProperty ;
+                         owl:inverseOf :AddressAlias.address ,
+                                       :AddressAlias.aliasAddress ;
+                         rdfs:domain :Address ;
+                         rdfs:range :AddressAlias ;
+                         iso19150-2:associationName "alias" ;
+                         rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                         rdfs:label "the address alias"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.theAddressedPeriod
+:Address.theAddressedPeriod rdf:type owl:ObjectProperty ;
+                            owl:inverseOf :AddressedPeriod.address ;
+                            rdfs:domain :Address ;
+                            rdfs:range :AddressedPeriod ;
+                            iso19150-2:associationName "allows unambiguous determination" ;
+                            rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                            rdfs:label "the addressed period"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressAlias.address
+:AddressAlias.address rdf:type owl:ObjectProperty ;
+                      rdfs:domain :AddressAlias ;
+                      rdfs:range :Address ;
+                      iso19150-2:associationName "alias" ;
+                      rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                      rdfs:label "address"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressAlias.aliasAddress
+:AddressAlias.aliasAddress rdf:type owl:ObjectProperty ;
+                           rdfs:domain :AddressAlias ;
+                           rdfs:range :Address ;
+                           iso19150-2:associationName "alias" ;
+                           rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                           rdfs:label "alias address"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressAlias.type
+:AddressAlias.type rdf:type owl:ObjectProperty ;
+                   rdfs:domain :AddressAlias ;
+                   rdfs:range :AddressAliasType ;
+                   rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                   rdfs:label "type"@en ;
+                   skos:definition "Code that specifies which justification for an alias applies to the address at the destination end of the association. The default value is unspecifiedAlias."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressClassSpecification.class
+:AddressClassSpecification.class rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :AddressClassSpecification ;
+                                 rdfs:range :AddressClass ;
+                                 rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                 rdfs:label "class"@en ;
+                                 skos:definition "Code that specifies the address class to which the address belongs."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressClassSpecification.component
+:AddressClassSpecification.component rdf:type owl:ObjectProperty ;
+                                     rdfs:domain :AddressClassSpecification ;
+                                     rdfs:range :AddressComponentType ;
+                                     rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                     rdfs:label "component"@en ;
+                                     skos:definition "The set of one or more address component types that may be considered together in various combinations to constitute an address of this class."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressClassSpecification.typology
+:AddressClassSpecification.typology rdf:type owl:ObjectProperty ;
+                                    rdfs:domain :AddressClassSpecification ;
+                                    rdfs:range :AddressTypology ;
+                                    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                    rdfs:label "typology"@en ;
+                                    skos:definition "Code that specifies the type of address class."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponent.id
+:AddressComponent.id rdf:type owl:ObjectProperty ;
+                     rdfs:domain :AddressComponent ;
+                     rdfs:range iso19152_1252:Oid ;
+                     rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                     rdfs:label "id"@en ;
+                     skos:definition "Unique character string that identifies the address component."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponent.lifecycleStage
+:AddressComponent.lifecycleStage rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :AddressComponent ;
+                                 rdfs:range :AddressLifecycleStage ;
+                                 rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                 rdfs:label "lifecycle stage"@en ;
+                                 skos:definition "Code that specifies the phase an address component has reached in its lifecycle."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponent.lifespan
+:AddressComponent.lifespan rdf:type owl:ObjectProperty ;
+                           rdfs:domain :AddressComponent ;
+                           rdfs:range :Lifespan ;
+                           rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                           rdfs:label "lifespan"@en ;
+                           skos:definition """Information about the period over which an address component exists.
+
+NOTE See Annex D for lifecycle examples of an address component."""@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponent.locale
+:AddressComponent.locale rdf:type owl:ObjectProperty ;
+                         rdfs:domain :AddressComponent ;
+                         rdfs:range iso19135-1_1058:RE_Locale ;
+                         rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                         rdfs:label "locale"@en ;
+                         skos:definition "A set of parameters that specify the cultural and linguistic environment."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponent.provenance
+:AddressComponent.provenance rdf:type owl:ObjectProperty ;
+                             rdfs:domain :AddressComponent ;
+                             rdfs:range :AddressProvenance ;
+                             rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                             rdfs:label "provenance"@en ;
+                             skos:definition "Information about the source or origin of the address component, such as the authority who assigned the address component value, the owner of the address component data instance, and the lineage of the address component."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponent.referenceObject
+:AddressComponent.referenceObject rdf:type owl:ObjectProperty ;
+                                  owl:inverseOf :ReferenceObject.addressComponent ;
+                                  rdfs:domain :AddressComponent ;
+                                  rdfs:range :ReferenceObject ;
+                                  iso19150-2:associationName "references" ;
+                                  rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                  rdfs:label "reference object"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponent.scopeComponent
+:AddressComponent.scopeComponent rdf:type owl:ObjectProperty ;
+                                 owl:inverseOf :AddressComponent.valueComponent ;
+                                 rdfs:domain :AddressComponent ;
+                                 rdfs:range :AddressComponent ;
+                                 iso19150-2:associationName "withinScopeOf" ;
+                                 rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                 rdfs:label "scope component"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponent.type
+:AddressComponent.type rdf:type owl:ObjectProperty ;
+                       rdfs:domain :AddressComponent ;
+                       rdfs:range :AddressComponentType ;
+                       iso19150-2:constraint "type is mandatory if there are no subclasses of AddressableObject" ;
+                       rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                       rdfs:label "type"@en ;
+                       skos:definition "Code that specifies the kind of address component."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponent.valueComponent
+:AddressComponent.valueComponent rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :AddressComponent ;
+                                 rdfs:range :AddressComponent ;
+                                 iso19150-2:associationName "withinScopeOf" ;
+                                 rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                 rdfs:label "value component"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponent.valueInformation
+:AddressComponent.valueInformation rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :AddressComponent ;
+                                   rdfs:range :AddressComponentValue ;
+                                   rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                   rdfs:label "value information"@en ;
+                                   skos:definition "Value of and information about one or more address component values."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponentValue.locale
+:AddressComponentValue.locale rdf:type owl:ObjectProperty ;
+                              rdfs:domain :AddressComponentValue ;
+                              rdfs:range iso19135_1055:RE_Locale ;
+                              rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                              rdfs:label "locale"@en ;
+                              skos:definition "A set of parameters that specify the cultural and linguistic environment."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponentValue.type
+:AddressComponentValue.type rdf:type owl:ObjectProperty ;
+                            rdfs:domain :AddressComponentValue ;
+                            rdfs:range :AddressComponentValueType ;
+                            rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                            rdfs:label "type"@en ;
+                            skos:definition "Code that specifies the kind of value, i.e. whether it is a variation of the default address component value, and if so, what the variation is."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponentValue.value
+:AddressComponentValue.value rdf:type owl:ObjectProperty ;
+                             rdfs:domain :AddressComponentValue ;
+                             rdfs:range iso19103_300:Any ;
+                             rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                             rdfs:label "value"@en ;
+                             skos:definition "One or more instances of the value of the address component."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressPosition.geometry
+:AddressPosition.geometry rdf:type owl:ObjectProperty ;
+                          rdfs:domain :AddressPosition ;
+                          rdfs:range iso19107_401:GM_Object ;
+                          rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                          rdfs:label "geometry"@en ;
+                          skos:definition "Geometry (coordinates) representing the address position."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressPosition.type
+:AddressPosition.type rdf:type owl:ObjectProperty ;
+                      rdfs:domain :AddressPosition ;
+                      rdfs:range :AddressPositionType ;
+                      rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                      rdfs:label "type"@en ;
+                      skos:definition """Code that specifies how the geometry shall be interpreted.
+
+EXAMPLES centroid, streetFront, approximated"""@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressProvenance.authority
+:AddressProvenance.authority rdf:type owl:ObjectProperty ;
+                             rdfs:domain :AddressProvenance ;
+                             rdfs:range iso19115-1_1505:CI_Organisation ;
+                             rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                             rdfs:label "authority"@en ;
+                             skos:definition "The body that assigns the address or address component value."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressProvenance.lineage
+:AddressProvenance.lineage rdf:type owl:ObjectProperty ;
+                           rdfs:domain :AddressProvenance ;
+                           rdfs:range iso19115-1_1508:LI_Lineage ;
+                           rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                           rdfs:label "lineage"@en ;
+                           skos:definition "Provenance, source(s) and production process(es) used in producing an address or address component."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressProvenance.owner
+:AddressProvenance.owner rdf:type owl:ObjectProperty ;
+                         rdfs:domain :AddressProvenance ;
+                         rdfs:range iso19115-1_1505:CI_Organisation ;
+                         rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                         rdfs:label "owner"@en ;
+                         skos:definition "Organization that maintains the data."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressSpecification.addressSpecificationCitation
+:AddressSpecification.addressSpecificationCitation rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain :AddressSpecification ;
+                                                   rdfs:range iso19115-1_1505:CI_Citation ;
+                                                   rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                                   rdfs:label "address specification citation"@en ;
+                                                   skos:definition "Reference to a specification or document that contains a definition of the address classes."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressSpecification.classSpecification
+:AddressSpecification.classSpecification rdf:type owl:ObjectProperty ;
+                                         rdfs:domain :AddressSpecification ;
+                                         rdfs:range :AddressClassSpecification ;
+                                         rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                         rdfs:label "class specification"@en ;
+                                         skos:definition "Information about one or more address classes, such as typology and valid component types." .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressableObject.childAddressableObject
+:AddressableObject.childAddressableObject rdf:type owl:ObjectProperty ;
+                                          owl:inverseOf :AddressableObject.parentAddressableObject ;
+                                          rdfs:domain :AddressableObject ;
+                                          rdfs:range :AddressableObject ;
+                                          iso19150-2:associationName "parent" ;
+                                          rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                          rdfs:label "child addressable object"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressableObject.id
+:AddressableObject.id rdf:type owl:ObjectProperty ;
+                      rdfs:domain :AddressableObject ;
+                      rdfs:range iso19152_1252:Oid ;
+                      rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                      rdfs:label "id"@en ;
+                      skos:definition "Unique character string that identifies the addressable object."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressableObject.lifecycleStage
+:AddressableObject.lifecycleStage rdf:type owl:ObjectProperty ;
+                                  rdfs:domain :AddressableObject ;
+                                  rdfs:range :AddressableObjectLifecycleStage ;
+                                  rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                  rdfs:label "lifecycle stage"@en ;
+                                  skos:definition "Code that specifies the phase an addressable object has reached in its lifecycle."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressableObject.lifespan
+:AddressableObject.lifespan rdf:type owl:ObjectProperty ;
+                            rdfs:domain :AddressableObject ;
+                            rdfs:range :Lifespan ;
+                            rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                            rdfs:label "lifespan"@en ;
+                            skos:definition "Information about the period over which an addressable object exists."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressableObject.parentAddressableObject
+:AddressableObject.parentAddressableObject rdf:type owl:ObjectProperty ;
+                                           rdfs:domain :AddressableObject ;
+                                           rdfs:range :AddressableObject ;
+                                           iso19150-2:associationName "parent" ;
+                                           rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                           rdfs:label "parent addressable object"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressableObject.position
+:AddressableObject.position rdf:type owl:ObjectProperty ;
+                            rdfs:domain :AddressableObject ;
+                            rdfs:range :AddressPosition ;
+                            rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                            rdfs:label "position"@en ;
+                            skos:definition "Geometry (coordinates) representing the addressable object."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressableObject.theAddressedPeriod
+:AddressableObject.theAddressedPeriod rdf:type owl:ObjectProperty ;
+                                      owl:inverseOf :AddressedPeriod.addressedObject ;
+                                      rdfs:domain :AddressableObject ;
+                                      rdfs:range :AddressedPeriod ;
+                                      iso19150-2:associationName "allows unambiguous determination" ;
+                                      rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                      rdfs:label "the addressed period"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressableObject.type
+:AddressableObject.type rdf:type owl:ObjectProperty ;
+                        rdfs:domain :AddressableObject ;
+                        rdfs:range :AddressableObjectType ;
+                        rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                        rdfs:label "type"@en ;
+                        skos:definition "Code that specifies the kind of object to which an address may be assigned."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressedPeriod.address
+:AddressedPeriod.address rdf:type owl:ObjectProperty ;
+                         rdfs:domain :AddressedPeriod ;
+                         rdfs:range :Address ;
+                         iso19150-2:associationName "allows unambiguous determination" ;
+                         rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                         rdfs:label "address"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressedPeriod.addressedObject
+:AddressedPeriod.addressedObject rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :AddressedPeriod ;
+                                 rdfs:range :AddressableObject ;
+                                 iso19150-2:associationName "allows unambiguous determination" ;
+                                 rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                 rdfs:label "addressed object"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#ReferenceObject.addressComponent
+:ReferenceObject.addressComponent rdf:type owl:ObjectProperty ;
+                                  rdfs:domain :ReferenceObject ;
+                                  rdfs:range :AddressComponent ;
+                                  iso19150-2:associationName "references" ;
+                                  rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                  rdfs:label "address component"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#ReferenceObject.geometry
+:ReferenceObject.geometry rdf:type owl:ObjectProperty ;
+                          rdfs:domain :ReferenceObject ;
+                          rdfs:range iso19107_401:GM_Object ;
+                          rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                          rdfs:label "geometry"@en ;
+                          skos:definition "Geometry (coordinates) representing the reference object."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#ReferenceObject.id
+:ReferenceObject.id rdf:type owl:ObjectProperty ;
+                    rdfs:domain :ReferenceObject ;
+                    rdfs:range iso19152_1252:Oid ;
+                    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                    rdfs:label "id"@en ;
+                    skos:definition "Unique character string that identifies the reference object."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#ReferenceObject.type
+:ReferenceObject.type rdf:type owl:ObjectProperty ;
+                      rdfs:domain :ReferenceObject ;
+                      rdfs:range :ReferenceObjectType ;
+                      rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                      rdfs:label "type"@en ;
+                      skos:definition "Code that specifies the kind of reference object."@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address.preferenceLevel
+:Address.preferenceLevel rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Address ;
+                         rdfs:range xsd:integer ;
+                         rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                         rdfs:label "preference level"@en ;
+                         skos:definition """Indicates the ranking of the address in a set of address aliases. 1 indicates highest ranking.
+
+EXAMPLE 1 A building on a street corner could be referenced by two addresses. One of them could have its preferenceLevel set to 1.
+
+EXAMPLE 2 In Switzerland, addresses containing German and French names, e.g. Biel (German) and Bienne (French), are different addresses with the same preference level."""@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponentValue.preferenceLevel
+:AddressComponentValue.preferenceLevel rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain :AddressComponentValue ;
+                                       rdfs:range xsd:integer ;
+                                       rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                       rdfs:label "preference level"@en ;
+                                       skos:definition """Indicates the ranking of the address component in a set of alternatives. 1 indicates highest ranking.
+
+EXAMPLE 1 A building on a street corner could be referenced by two addresses, each with a different component value for the thoroughfare name address component. For one of them the preferenceLevel could be set to 1.
+
+EXAMPLE 2 In Switzerland, Biel (German) and Bienne (French) are different address components with the same preference level."""@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressedPeriod.addressedFrom
+:AddressedPeriod.addressedFrom rdf:type owl:DatatypeProperty ;
+                               rdfs:domain :AddressedPeriod ;
+                               rdfs:range xsd:dateTime ;
+                               rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                               rdfs:label "addressed from"@en ;
+                               skos:definition "Date and time from which the addressed object is unambiguously determined by the address."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressedPeriod.addressedTo
+:AddressedPeriod.addressedTo rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :AddressedPeriod ;
+                             rdfs:range xsd:dateTime ;
+                             rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                             rdfs:label "addressed to"@en ;
+                             skos:definition "Date and time when the addressed object ceased to be unambiguously determined by the address."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Lifespan.closeRecord
+:Lifespan.closeRecord rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Lifespan ;
+                      rdfs:range xsd:dateTime ;
+                      rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                      rdfs:label "close record"@en ;
+                      skos:definition "Specifies the date and time at which this version of the data object was superseded by another version or retired in the dataset."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Lifespan.openRecord
+:Lifespan.openRecord rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Lifespan ;
+                     rdfs:range xsd:dateTime ;
+                     rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                     rdfs:label "open record"@en ;
+                     skos:definition "Specifies the date and time at which this version of the data object was inserted into the dataset."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Lifespan.validFrom
+:Lifespan.validFrom rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Lifespan ;
+                    rdfs:range xsd:dateTime ;
+                    rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                    rdfs:label "valid from"@en ;
+                    skos:definition "Date and time from which the object is valid in the physical world."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Lifespan.validTo
+:Lifespan.validTo rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Lifespan ;
+                  rdfs:range xsd:dateTime ;
+                  rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                  rdfs:label "valid to"@en ;
+                  skos:definition "Date and time when this object ceased to be valid in the physical world."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Lifespan.version
+:Lifespan.version rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Lifespan ;
+                  rdfs:range xsd:string ;
+                  rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                  rdfs:label "version"@en ;
+                  skos:definition """Unique identifier of this variant of the address record.
+
+NOTE The version is incremented with any change to the data object."""@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://def.isotc211.org/iso19103/2015/AnyType#Any
+iso19103_300:Any rdf:type owl:Class .
+
+
+###  http://def.isotc211.org/iso19107/2003/GeometryRoot#GM_Object
+iso19107_401:GM_Object rdf:type owl:Class .
+
+
+###  http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_Citation
+iso19115-1_1505:CI_Citation rdf:type owl:Class .
+
+
+###  http://def.isotc211.org/iso19115/-1/2014/CitationAndResponsiblePartyInformation#CI_Organisation
+iso19115-1_1505:CI_Organisation rdf:type owl:Class .
+
+
+###  http://def.isotc211.org/iso19115/-1/2014/LineageInformation#LI_Lineage
+iso19115-1_1508:LI_Lineage rdf:type owl:Class .
+
+
+###  http://def.isotc211.org/iso19135/-1/2015/ExtendedModel#RE_Locale
+iso19135-1_1058:RE_Locale rdf:type owl:Class .
+
+
+###  http://def.isotc211.org/iso19135/2005/ProceduresForItemRegistration#RE_Locale
+iso19135_1055:RE_Locale rdf:type owl:Class .
+
+
+###  http://def.isotc211.org/iso19152/2012/SpecialClasses#Oid
+iso19152_1252:Oid rdf:type owl:Class .
+
+
+###  http://def.isotc211.org/iso19160/-1/2015/ExternalClasses#BusinessRegister
+iso19160-1_1124:BusinessRegister rdf:type owl:Class .
+
+
+###  http://def.isotc211.org/iso19160/-1/2015/ExternalClasses#Client
+iso19160-1_1124:Client rdf:type owl:Class .
+
+
+###  http://def.isotc211.org/iso19160/-1/2015/ExternalClasses#Employee
+iso19160-1_1124:Employee rdf:type owl:Class .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Address
+:Address rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.addressComponent ;
+                           owl:allValuesFrom :AddressComponent
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.business_branch ;
+                           owl:allValuesFrom iso19160-1_1124:BusinessRegister
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.business_headOffice ;
+                           owl:allValuesFrom iso19160-1_1124:BusinessRegister
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.childAddress ;
+                           owl:allValuesFrom :Address
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.class ;
+                           owl:allValuesFrom :AddressClass
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.client ;
+                           owl:allValuesFrom iso19160-1_1124:Client
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.employee ;
+                           owl:allValuesFrom iso19160-1_1124:Employee
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.id ;
+                           owl:allValuesFrom iso19152_1252:Oid
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.lifecycleStage ;
+                           owl:allValuesFrom :AddressLifecycleStage
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.lifespan ;
+                           owl:allValuesFrom :Lifespan
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.locale ;
+                           owl:allValuesFrom iso19135-1_1058:RE_Locale
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.parentAddress ;
+                           owl:allValuesFrom :Address
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.position ;
+                           owl:allValuesFrom :AddressPosition
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.provenance ;
+                           owl:allValuesFrom :AddressProvenance
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.specification ;
+                           owl:allValuesFrom :AddressSpecification
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.status ;
+                           owl:allValuesFrom :AddressStatus
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.theAddressAlias ;
+                           owl:allValuesFrom :AddressAlias
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.theAddressedPeriod ;
+                           owl:allValuesFrom :AddressedPeriod
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.addressComponent ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.class ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.id ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.lifecycleStage ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.lifespan ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.locale ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.parentAddress ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.provenance ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.status ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.preferenceLevel ;
+                           owl:allValuesFrom xsd:integer
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Address.preferenceLevel ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         iso19150-2:constraint "For Provenance conformance, provenance shall be mandatory"@en ;
+         rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+         rdfs:label "Address"@en ;
+         skos:definition "Structured information that allows the unambiguous determination of an object for purposes of identification and location."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressAlias
+:AddressAlias rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :AddressAlias.address ;
+                                owl:allValuesFrom :Address
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :AddressAlias.aliasAddress ;
+                                owl:allValuesFrom :Address
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :AddressAlias.type ;
+                                owl:allValuesFrom :AddressAliasType
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :AddressAlias.address ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :AddressAlias.aliasAddress ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :AddressAlias.type ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ;
+              rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+              rdfs:label "Address Alias"@en ;
+              skos:definition "Information about an address alias."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressAliasType
+:AddressAliasType rdf:type owl:Class ;
+                  rdfs:subClassOf skos:Concept ;
+                  rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                  rdfs:label "Address Alias Type"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressClass
+:AddressClass rdf:type owl:Class ;
+              rdfs:subClassOf skos:Concept ;
+              rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+              rdfs:label "Address Class"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressClassSpecification
+:AddressClassSpecification rdf:type owl:Class ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty :AddressClassSpecification.class ;
+                                             owl:allValuesFrom :AddressClass
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :AddressClassSpecification.component ;
+                                             owl:allValuesFrom :AddressComponentType
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :AddressClassSpecification.typology ;
+                                             owl:allValuesFrom :AddressTypology
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :AddressClassSpecification.component ;
+                                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :AddressClassSpecification.class ;
+                                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :AddressClassSpecification.typology ;
+                                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                                           ] ;
+                           rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                           rdfs:label "Address Class Specification"@en ;
+                           skos:definition "Information about the address class."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponent
+:AddressComponent rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.id ;
+                                    owl:allValuesFrom iso19152_1252:Oid
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.lifecycleStage ;
+                                    owl:allValuesFrom :AddressLifecycleStage
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.lifespan ;
+                                    owl:allValuesFrom :Lifespan
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.locale ;
+                                    owl:allValuesFrom iso19135-1_1058:RE_Locale
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.provenance ;
+                                    owl:allValuesFrom :AddressProvenance
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.referenceObject ;
+                                    owl:allValuesFrom :ReferenceObject
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.scopeComponent ;
+                                    owl:allValuesFrom :AddressComponent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.type ;
+                                    owl:allValuesFrom :AddressComponentType
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.valueComponent ;
+                                    owl:allValuesFrom :AddressComponent
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.valueInformation ;
+                                    owl:allValuesFrom :AddressComponentValue
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.valueInformation ;
+                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.type ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.id ;
+                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.lifecycleStage ;
+                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.lifespan ;
+                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.locale ;
+                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.provenance ;
+                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :AddressComponent.scopeComponent ;
+                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
+                  iso19150-2:constraint "For Provenance conformance, provenance shall be mandatory"@en ;
+                  rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                  rdfs:label "Address Component"@en ;
+                  skos:definition "Constituent part of an address."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponentType
+:AddressComponentType rdf:type owl:Class ;
+                      rdfs:subClassOf skos:Concept ;
+                      rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                      rdfs:label "Address Component Type"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponentValue
+:AddressComponentValue rdf:type owl:Class ;
+                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                         owl:onProperty :AddressComponentValue.locale ;
+                                         owl:allValuesFrom iso19135_1055:RE_Locale
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :AddressComponentValue.type ;
+                                         owl:allValuesFrom :AddressComponentValueType
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :AddressComponentValue.value ;
+                                         owl:allValuesFrom iso19103_300:Any
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :AddressComponentValue.value ;
+                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :AddressComponentValue.locale ;
+                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :AddressComponentValue.type ;
+                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :AddressComponentValue.preferenceLevel ;
+                                         owl:allValuesFrom xsd:integer
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :AddressComponentValue.preferenceLevel ;
+                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                       ] ;
+                       iso19150-2:constraint "For Locale conformance, locale shall be mandatory"@en ;
+                       rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                       rdfs:label "Address Component Value"@en ;
+                       skos:definition "Information about the value of an address component."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressComponentValueType
+:AddressComponentValueType rdf:type owl:Class ;
+                           rdfs:subClassOf skos:Concept ;
+                           rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                           rdfs:label "Address Component Value Type"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressLifecycleStage
+:AddressLifecycleStage rdf:type owl:Class ;
+                       rdfs:subClassOf skos:Concept ;
+                       rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                       rdfs:label "Address Lifecycle Stage"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressPosition
+:AddressPosition rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty :AddressPosition.geometry ;
+                                   owl:allValuesFrom iso19107_401:GM_Object
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :AddressPosition.type ;
+                                   owl:allValuesFrom :AddressPositionType
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :AddressPosition.geometry ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :AddressPosition.type ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ;
+                 rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                 rdfs:label "Address Position"@en ;
+                 skos:definition "Information about the representative position of an address."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressPositionType
+:AddressPositionType rdf:type owl:Class ;
+                     rdfs:subClassOf skos:Concept ;
+                     rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                     rdfs:label "Address Position Type"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressProvenance
+:AddressProvenance rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressProvenance.authority ;
+                                     owl:allValuesFrom iso19115-1_1505:CI_Organisation
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressProvenance.lineage ;
+                                     owl:allValuesFrom iso19115-1_1508:LI_Lineage
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressProvenance.owner ;
+                                     owl:allValuesFrom iso19115-1_1505:CI_Organisation
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressProvenance.authority ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressProvenance.owner ;
+                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                   ] ;
+                   rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                   rdfs:label "Address Provenance"@en ;
+                   skos:definition "Provenance information, e.g. the source or origin of the record, changes to the record, and organisations or individuals that have had custody of the record since its creation."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressSpecification
+:AddressSpecification rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty :AddressSpecification.addressSpecificationCitation ;
+                                        owl:allValuesFrom iso19115-1_1505:CI_Citation
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :AddressSpecification.classSpecification ;
+                                        owl:allValuesFrom :AddressClassSpecification
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :AddressSpecification.addressSpecificationCitation ;
+                                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                                      ] ;
+                      rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                      rdfs:label "Address Specification"@en ;
+                      skos:definition "A reference to a specification and description of a set of address class specifications, which  specify the typology and the set of valid component types for the class."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressStatus
+:AddressStatus rdf:type owl:Class ;
+               rdfs:subClassOf skos:Concept ;
+               rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+               rdfs:label "Address Status"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressTypology
+:AddressTypology rdf:type owl:Class ;
+                 rdfs:subClassOf skos:Concept ;
+                 rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                 rdfs:label "Address Typology"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressableObject
+:AddressableObject rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressableObject.childAddressableObject ;
+                                     owl:allValuesFrom :AddressableObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressableObject.id ;
+                                     owl:allValuesFrom iso19152_1252:Oid
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressableObject.lifecycleStage ;
+                                     owl:allValuesFrom :AddressableObjectLifecycleStage
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressableObject.lifespan ;
+                                     owl:allValuesFrom :Lifespan
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressableObject.parentAddressableObject ;
+                                     owl:allValuesFrom :AddressableObject
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressableObject.position ;
+                                     owl:allValuesFrom :AddressPosition
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressableObject.theAddressedPeriod ;
+                                     owl:allValuesFrom :AddressedPeriod
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressableObject.type ;
+                                     owl:allValuesFrom :AddressableObjectType
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressableObject.id ;
+                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressableObject.lifecycleStage ;
+                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressableObject.lifespan ;
+                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressableObject.parentAddressableObject ;
+                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressableObject.position ;
+                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :AddressableObject.type ;
+                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                   ] ;
+                   iso19150-2:constraint "If no AddressableObject subclasses, then type is mandatory"@en ;
+                   rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                   rdfs:label "Addressable Object"@en ;
+                   skos:definition "An object that may be assigned an address."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressableObjectLifecycleStage
+:AddressableObjectLifecycleStage rdf:type owl:Class ;
+                                 rdfs:subClassOf skos:Concept ;
+                                 rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                                 rdfs:label "Addressable Object Lifecycle Stage"@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressableObjectType
+:AddressableObjectType rdf:type owl:Class ;
+                       rdfs:subClassOf skos:Concept ;
+                       rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                       rdfs:label "Addressable Object Type" .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#AddressedPeriod
+:AddressedPeriod rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty :AddressedPeriod.address ;
+                                   owl:allValuesFrom :Address
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :AddressedPeriod.addressedObject ;
+                                   owl:allValuesFrom :AddressableObject
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :AddressedPeriod.address ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :AddressedPeriod.addressedObject ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :AddressedPeriod.addressedFrom ;
+                                   owl:allValuesFrom xsd:dateTime
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :AddressedPeriod.addressedTo ;
+                                   owl:allValuesFrom xsd:dateTime
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :AddressedPeriod.addressedFrom ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :AddressedPeriod.addressedTo ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ;
+                 rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                 rdfs:label "Addressed Period"@en ;
+                 skos:definition "The period during which the address as associated with the addressed object."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#Lifespan
+:Lifespan rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :Lifespan.closeRecord ;
+                            owl:allValuesFrom xsd:dateTime
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Lifespan.openRecord ;
+                            owl:allValuesFrom xsd:dateTime
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Lifespan.validFrom ;
+                            owl:allValuesFrom xsd:dateTime
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Lifespan.validTo ;
+                            owl:allValuesFrom xsd:dateTime
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Lifespan.version ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Lifespan.validFrom ;
+                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Lifespan.closeRecord ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Lifespan.openRecord ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Lifespan.validTo ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Lifespan.version ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+          rdfs:label "Lifespan" ;
+          skos:definition "Information to describe the lifespan of an address, adress component or addressable object."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#ReferenceObject
+:ReferenceObject rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty :ReferenceObject.addressComponent ;
+                                   owl:allValuesFrom :AddressComponent
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :ReferenceObject.geometry ;
+                                   owl:allValuesFrom iso19107_401:GM_Object
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :ReferenceObject.id ;
+                                   owl:allValuesFrom iso19152_1252:Oid
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :ReferenceObject.type ;
+                                   owl:allValuesFrom :ReferenceObjectType
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :ReferenceObject.addressComponent ;
+                                   owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :ReferenceObject.id ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :ReferenceObject.geometry ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :ReferenceObject.type ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] ;
+                 rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                 rdfs:label "ReferenceObject" ;
+                 skos:definition "The object to which the address component value may refer."@en .
+
+
+###  http://reference.data.gov.au/def/ont/iso19160-1-address#ReferenceObjectType
+:ReferenceObjectType rdf:type owl:Class ;
+                     rdfs:subClassOf skos:Concept ;
+                     rdfs:isDefinedBy "http://standards.iso.org/iso/19160/-1/ed-1/en/" ;
+                     rdfs:label "Reference Object Type"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
