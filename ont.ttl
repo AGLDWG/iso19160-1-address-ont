@@ -27,7 +27,7 @@
                                                                        <http://def.isotc211.org/iso19150/-2/2012/base> ;
                                                            dc:contributor "Australian Government Linked Data Working Group"^^xsd:string ;
                                                            dc:creator "ISO TC211, Group for Ontology Management"^^xsd:string ;
-                                                           rdfs:label "ISO 19160-1:2015 Address ontology" ;
+                                                           rdfs:label "ISO19160-1:2015 Address ontology" ;
                                                            rdfs:comment """This ontology is a version of the ISO TC211, Group for Ontology Management (GOM)'s OWL ontology interpretation of the ISO19160-1:2015 \"Addressing -- Part 1: Conceptual model\" standard (see https://www.iso.org/standard/61710.html) taken from that ontology's source code, published at https://github.com/ISO-TC211/GOM/tree/master/isotc211_GOM_harmonizedOntology/19160-1/2015.
 
 This version uses different URIs for the ontology so that they can be made to resolve through the Australian Government Linked Data Working Groups redirect services where the original ontology's URIs do not resolve.
