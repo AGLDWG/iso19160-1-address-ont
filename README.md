@@ -11,6 +11,7 @@ This ontology is online in HTML and RDF forms at:
 ## Contents
 * [iso19160-1.ttl](iso19160-1.ttl) - the ontology, in RDF (turtle)
 * [iso19160-1.html](iso19160-1.html) - the ontology, in HTML
+* [codelist.ttl](codelist.ttl) - a SKOS vocabulary of codes for use with the ontology
 
 ## License
 This version of the ontology and all other content in this repository are licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) (local copy of deed: [LICENSE](LICENSE)).

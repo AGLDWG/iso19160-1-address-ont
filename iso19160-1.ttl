@@ -63,7 +63,7 @@ As the GOM's version of the ontology evolves, we will keep this version up-to-da
                                                         dct:created "2017-11-27"^^xsd:date ;
                                                         dct:modified "2019-10-24"^^xsd:date ;
                                                         skos:historyNote "This version of the ISO 19160-1 standard presented as an OWL ontology was mostly taken from the original OWL interpretation prepared by the ISO TC211, Group for Ontology Management"@en ;
-                                                          prov:wasGeneratedBy [ 
+                                                        prov:wasGeneratedBy [ 
                                                           a doap:Project , prov:Activity ;
                                                           doap:repository <https://github.com/AGLDWG/iso19160-1-address-ont>
                                                         ] ;
