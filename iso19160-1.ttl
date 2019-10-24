@@ -22,8 +22,8 @@
 @base <http://linked.data.gov.au/def/ont/iso19160-1-address> .
 
 <http://linked.data.gov.au/def/ont/iso19160-1-address>  a owl:Ontology ;
-                                                        owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address> ;
-                                                        owl:versionIRI <http://linked.data.gov.au/def/ont/iso19160-1-address/1.1> ;
+                                                        rdfs:seeAlso <http://def.isotc211.org/iso19160/-1/2015/Address> ;
+                                                        owl:versionIRI <http://linked.data.gov.au/def/ont/iso19160-1-address/1.2> ;
                                                         owl:imports <http://def.isotc211.org/iso19160/-1/2015/Profile_Minimal> ,
                                                                     <http://def.isotc211.org/iso19160/-1/2015/ExternalClasses> ,
                                                                     <http://def.isotc211.org/iso19150/-2/2012/base> ;
