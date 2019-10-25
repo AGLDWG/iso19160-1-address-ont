@@ -18,12 +18,14 @@ This version of the ontology and all other content in this repository are licens
 
 ## Contacts
 Creator:  
-**ISO TC211, Group for Ontology Management**  
-<https://def.isotc211.org/>  
-
-Contributor:  
 **Nicholas J. Car**  
 [SURROUND Australia Pty Ltd](https://surroundaustralia.com)  
 *with [CSIRO](https://www.csiro.au) when most of this work was done*  
 <nicholas.car@surroundaustralia.com>  
 <https://orcid.org/0000-0002-8742-7730>  
+
+Contributor:  
+**ISO TC211, Group for Ontology Management**  
+<https://def.isotc211.org/>  
+
+
