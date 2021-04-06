@@ -1,4 +1,4 @@
-@prefix : <http://linked.data.gov.au/def/iso19160-1-address#> .
+@prefix : <https://linked.data.gov.au/def/iso19160-1-address#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
@@ -19,48 +19,30 @@
 @prefix iso19135-1_1058: <http://def.isotc211.org/iso19135/-1/2015/ExtendedModel#> .
 @prefix iso19160-1_1124: <http://def.isotc211.org/iso19160/-1/2015/ExternalClasses#> .
 @prefix iso19160-1_1128: <http://def.isotc211.org/iso19160/-1/2015/Profile_Minimal#> .
-@base <http://linked.data.gov.au/def/iso19160-1-address> .
+@base <https://linked.data.gov.au/def/iso19160-1-address> .
 
-<http://linked.data.gov.au/def/iso19160-1-address>  a owl:Ontology ;
+<https://linked.data.gov.au/def/iso19160-1-address>  a owl:Ontology ;
                                                     owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address> ;
-                                                    owl:versionIRI <http://linked.data.gov.au/def/iso19160-1-address/1.1> ;
+                                                    owl:versionIRI <https://linked.data.gov.au/def/iso19160-1-address/1.1> ;
                                                     owl:imports <http://def.isotc211.org/iso19160/-1/2015/Profile_Minimal> ,
                                                                 <http://def.isotc211.org/iso19160/-1/2015/ExternalClasses> ,
                                                                 <http://def.isotc211.org/iso19150/-2/2012/base> ;
-                                                    dct:creator [
-                                                      a sdo:Organization ;
-                                                      sdo:name "ISO TC211, Group for Ontology Management" ;
-                                                      sdo:url <https://def.isotc211.org/> ;
-                                                    ] ;
-                                                    dct:contributor [ 
-                                                      a sdo:Person ;
-                                                      sdo:affiliation [
-                                                        a sdo:Organization ;
-                                                        sdo:url <https://surroundaustralia.com> ;
-                                                        sdo:name "SURROUND Australia Pty Ltd" ;      
-                                                      ] ;
-                                                      sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
-                                                      sdo:identifier <https://orcid.org/0000-0002-8742-7730> ;
-                                                      sdo:name "Nicholas J. Car"
-                                                    ] ;                                                     
+                                                    dct:creator <https://def.isotc211.org> ;
+                                                    dct:contributor <https://orcid.org/0000-0002-8742-7730> ;                                                    
                                                     dct:title "ISO19160-1:2015 Address ontology" ;
                                                     dct:description """This ontology is a version of the ISO TC211, Group for Ontology Management (GOM)'s OWL ontology interpretation of the ISO19160-1:2015 \"Addressing -- Part 1: Conceptual model\" standard (see https://www.iso.org/standard/61710.html) taken from that ontology's source code, published at https://github.com/ISO-TC211/GOM/tree/master/isotc211_GOM_harmonizedOntology/19160-1/2015.
 
 
 This version uses different URIs for the ontology so that they can be made to resolve through the Australian Government Linked Data Working Groups redirect services where the original ontology's URIs do not resolve.
 
-This ontology also has had the code lists removed thus preserving the data model but not the vocabularies. The code lists are published separately at http://linked.data.gov.au/def/iso19160-1-address/codelist.
+This ontology also has had the code lists removed thus preserving the data model but not the vocabularies. The code lists are published separately at https://linked.data.gov.au/def/iso19160-1-address/codelist.
 
 Additionally, this version adds some metadata, such as this explanation, some further annotation properties to better display elements of the ontology and includes a human-readable (HTML) version of the ontology generated from the RDF version.
 
 As the GOM's version of the ontology evolves, we will keep this version up-to-date as we intend to only publish an easier-to-access version of their ontology here, not to profile it."""@en ;
                                                     dct:source <http://standards.iso.org/iso/19160/-1/ed-1/en/> ;
                                                     owl:versionInfo "Updates to the ontology documentation; changed URIs from reference.data.gov.au to linked.data.gov.au"^^xsd:string ;
-                                                    dct:publisher [
-                                                      a sdo:Organization ;
-                                                      sdo:identifier <http://linked.data.gov.au/org/agldwg> ;                                                             
-                                                      sdo:name "Australian Government Linked Data Working Group" ;
-                                                    ] ;
+                                                    dct:publisher <https://linked.data.gov.au/org/agldwg> ;
                                                     dct:created "2017-11-27"^^xsd:date ;
                                                     dct:modified "2019-10-24"^^xsd:date ;
                                                     skos:historyNote "This version of the ISO 19160-1 standard presented as an OWL ontology was mostly taken from the original OWL interpretation prepared by the ISO TC211, Group for Ontology Management"@en ;
@@ -68,6 +50,27 @@ As the GOM's version of the ontology evolves, we will keep this version up-to-da
                                                       a doap:Project , prov:Activity ;
                                                       doap:repository <https://github.com/AGLDWG/iso19160-1-address-ont>
                                                     ] ;
+.
+
+<https://def.isotc211.org>
+      a sdo:Organization ;
+      sdo:name "ISO TC211, Group for Ontology Management" ;
+      sdo:url "https://def.isotc211.org"^^xsd:anyURI ;
+.
+
+<http://orcid.org/0000-0002-8742-7730>
+    a sdo:Person ;
+    sdo:name "Nicholas J. Car" ;
+    sdo:identifier <http://orcid.org/0000-0002-8742-7730> ;
+    sdo:email "nicholas.car@surroundaustralia.com"^^xsd:anyURI ;
+    sdo:affiliation <https://surroundaustralia.com> ;
+.
+
+<https://linked.data.gov.au/org/agldwg>
+    a sdo:Organization ;
+    sdo:identifier <https://linked.data.gov.au/org/agldwg> ;
+    sdo:name "Australian Government Linked Data Working Group" ;
+    url "https://www.linked.data.gov.au"^xsd:anyURI ;
 .
 
 #################################################################
@@ -97,7 +100,7 @@ skos:definition rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  http://linked.data.gov.au/def/iso19160-1-address#Address.addressComponent
+###  https://linked.data.gov.au/def/iso19160-1-address#Address.addressComponent
 :Address.addressComponent rdf:type owl:ObjectProperty ;
                           owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address#Address.addressComponent> ;
                           rdfs:domain :Address ;
@@ -108,7 +111,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                           rdfs:label "address component"@en .
 
 
-###  http://linked.data.gov.au/def/iso19160-1-address#Address.business_branch
+###  https://linked.data.gov.au/def/iso19160-1-address#Address.business_branch
 :Address.business_branch rdf:type owl:ObjectProperty ;
                          owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address#Address.business_branch> ;
                          rdfs:domain :Address ;
@@ -117,7 +120,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                          rdfs:label "business"@en .
 
 
-###  http://linked.data.gov.au/def/iso19160-1-address#Address.business_headOffice
+###  https://linked.data.gov.au/def/iso19160-1-address#Address.business_headOffice
 :Address.business_headOffice rdf:type owl:ObjectProperty ;
                              owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address#Address.business_headOffice> ;
                              rdfs:domain :Address ;
@@ -126,7 +129,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                              rdfs:label "business"@en .
 
 
-###  http://linked.data.gov.au/def/iso19160-1-address#Address.childAddress
+###  https://linked.data.gov.au/def/iso19160-1-address#Address.childAddress
 :Address.childAddress rdf:type owl:ObjectProperty ;
                       owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address#Address.childAddress> ;
                       owl:inverseOf :Address.parentAddress ;
@@ -137,7 +140,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                       rdfs:label "child address"@en .
 
 
-###  http://linked.data.gov.au/def/iso19160-1-address#Address.class
+###  https://linked.data.gov.au/def/iso19160-1-address#Address.class
 :Address.class rdf:type owl:ObjectProperty ;
                owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address#Address.class> ;
                rdfs:domain :Address ;
@@ -147,7 +150,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                skos:definition "Code that specifies the address class to which the address belongs."@en .
 
 
-###  http://linked.data.gov.au/def/iso19160-1-address#Address.client
+###  https://linked.data.gov.au/def/iso19160-1-address#Address.client
 :Address.client rdf:type owl:ObjectProperty ;
                 owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address#Address.client> ;
                 rdfs:domain :Address ;
@@ -156,7 +159,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                 rdfs:label "client"@en .
 
 
-###  http://linked.data.gov.au/def/iso19160-1-address#Address.employee
+###  https://linked.data.gov.au/def/iso19160-1-address#Address.employee
 :Address.employee rdf:type owl:ObjectProperty ;
                   owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address#Address.employee> ;
                   rdfs:domain :Address ;
@@ -165,7 +168,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                   rdfs:label "employee"@en .
 
 
-###  http://linked.data.gov.au/def/iso19160-1-address#Address.id
+###  https://linked.data.gov.au/def/iso19160-1-address#Address.id
 :Address.id rdf:type owl:ObjectProperty ;
             owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address#Address.id> ;
             rdfs:domain :Address ;
@@ -175,7 +178,7 @@ skos:definition rdf:type owl:AnnotationProperty .
             skos:definition "Unique character string that identifies the address."@en .
 
 
-###  http://linked.data.gov.au/def/iso19160-1-address#Address.lifecycleStage
+###  https://linked.data.gov.au/def/iso19160-1-address#Address.lifecycleStage
 :Address.lifecycleStage rdf:type owl:ObjectProperty ;
                         owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address#Address.lifecycleStage> ;
                         rdfs:domain :Address ;
@@ -185,7 +188,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                         skos:definition "Code that specifies the phase an address has reached in its lifecycle."@en .
 
 
-###  http://linked.data.gov.au/def/iso19160-1-address#Address.lifespan
+###  https://linked.data.gov.au/def/iso19160-1-address#Address.lifespan
 :Address.lifespan rdf:type owl:ObjectProperty ;
                   owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address#Address.lifespan> ;
                   rdfs:domain :Address ;
@@ -195,7 +198,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                   skos:definition "Information about the period over which an address exists"@en .
 
 
-###  http://linked.data.gov.au/def/iso19160-1-address#Address.locale
+###  https://linked.data.gov.au/def/iso19160-1-address#Address.locale
 :Address.locale rdf:type owl:ObjectProperty ;
                 owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address#Address.locale> ;
                 rdfs:domain :Address ;
@@ -205,7 +208,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                 skos:definition "A set or parameters that specify the cultural and linguistic environment."@en .
 
 
-###  http://linked.data.gov.au/def/iso19160-1-address#Address.parentAddress
+###  https://linked.data.gov.au/def/iso19160-1-address#Address.parentAddress
 :Address.parentAddress rdf:type owl:ObjectProperty ;
                        owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address#Address.parentAddress> ;
                        rdfs:domain :Address ;
@@ -215,7 +218,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                        rdfs:label "parent address"@en .
 
 
-###  http://linked.data.gov.au/def/iso19160-1-address#Address.position
+###  https://linked.data.gov.au/def/iso19160-1-address#Address.position
 :Address.position rdf:type owl:ObjectProperty ;
                   owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address#Address.position> ;
                   rdfs:domain :Address ;
@@ -225,7 +228,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                   skos:definition "Geometry (coordinates) that represents the address location."@en .
 
 
-###  http://linked.data.gov.au/def/iso19160-1-address#Address.provenance
+###  https://linked.data.gov.au/def/iso19160-1-address#Address.provenance
 :Address.provenance rdf:type owl:ObjectProperty ;
                     owl:sameAs <http://def.isotc211.org/iso19160/-1/2015/Address#Address.provenance> ;
                     rdfs:domain :Address ;
