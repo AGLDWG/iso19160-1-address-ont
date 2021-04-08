@@ -70,7 +70,7 @@ As the GOM's version of the ontology evolves, we will keep this version up-to-da
     a sdo:Organization ;
     sdo:identifier <https://linked.data.gov.au/org/agldwg> ;
     sdo:name "Australian Government Linked Data Working Group" ;
-    url "https://www.linked.data.gov.au"^xsd:anyURI ;
+    sdo:url "https://www.linked.data.gov.au"^^xsd:anyURI ;
 .
 
 #################################################################
